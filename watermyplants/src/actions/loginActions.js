@@ -7,12 +7,13 @@ export const LOGIN_FAIL = 'LOGIN_FAIL'
 
 export const LOGOUT = 'LOGOUT'
 
-export const login = (dispatch, user) => {
+export const login = (dispatch) => {
     dispatch({ type: LOGIN_START})
     axiosWithAuth()
-    .post('http://doc-watermyplants.herokuapp.com/login', user)
+    .post('http://doc-watermyplants.herokuapp.com/login')
     .then(response => {
         dispatch({ type: LOGIN_SUCCESS, payload: response.data.message})
+        localStorage.setItem('token')
     })
     .catch(error => {
         dispatch({ type: LOGIN_FAIL, payload: error.message.data.message})
