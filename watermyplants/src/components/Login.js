@@ -22,7 +22,7 @@ const Login = props => {
           <button type="submit">Sign In</button>
           <p>Don't have an account? <a href="#">Sign Up</a></p>
         </div>
-        <image src="https://via.placeholder.com/150" alt="placeholder"/>
+        <img src="https://via.placeholder.com/150" alt="placeholder"/>
       </form>
     </section>
   );
