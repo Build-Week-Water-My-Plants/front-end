@@ -5,6 +5,6 @@ export const axiosInstance = () => {
     headers: {
       "Content-type": "application/x-www-form-urlencoded"
     },
-    baseURL: "http://doc-watermyplants.heroku.com/createnewuser"
+    baseURL: "http://doc-watermyplants.heroku.com/"
   });
 };
