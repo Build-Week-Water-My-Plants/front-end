@@ -8,11 +8,7 @@ import Nav from "./components/Nav";
 function App() {
   return (
     <div className="App">
-<<<<<<< HEAD
       <Nav />
-=======
-
->>>>>>> b4da790c468e235fa796191177def838b0243c2b
     </div>
   );
 }
