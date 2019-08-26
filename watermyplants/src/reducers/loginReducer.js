@@ -1,4 +1,4 @@
-import { LOGIN_START, LOGIN_SUCCESS, LOGIN_FAIL} from '../actions/loginActions'
+import { LOGIN_START, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT} from '../actions/loginActions'
 
 const initialState = {
     isLoggingIn: false,
@@ -9,6 +9,11 @@ const initialState = {
 
 export const loginReducer = (state=initialState, action) => {
     switch (action.type){
+        case LOGOUT:
+            return {
+                ...state,
+                isLoggedIn:false
+            }
         case LOGIN_FAIL:
             return{
                 ...state,
@@ -29,5 +34,7 @@ export const loginReducer = (state=initialState, action) => {
                 token: localStorage.getItem('token'),
                 error: false
             }
+        default:
+            return state;
     }
 }
