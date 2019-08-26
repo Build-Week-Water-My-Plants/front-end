@@ -13,16 +13,14 @@ const Login = props => {
             name="username, tel"
             placeholder="Username or Phone Number"
           />
-          <input 
-            type="password"
-            name="password"
-            placeholder="Password"
-          />
+          <input type="password" name="password" placeholder="Password" />
           <a href="#">Forgot your password?</a>
           <button type="submit">Sign In</button>
-          <p>Don't have an account? <a href="#">Sign Up</a></p>
+          <p>
+            Don't have an account? <a href="#">Sign Up</a>
+          </p>
         </div>
-        <img src="https://via.placeholder.com/150" alt="placeholder"/>
+        <img src="https://via.placeholder.com/150" alt="placeholder" />
       </form>
     </section>
   );
