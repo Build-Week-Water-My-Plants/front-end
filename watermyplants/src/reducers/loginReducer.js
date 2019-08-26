@@ -7,8 +7,8 @@ const initialState = {
     token: localStorage.getItem('token')
 }
 
-export const loginReducer = (state=initialState, action) => {
-    switch (action.type){
+export const loginReducer = (state=initialState, { type, payload}) => {
+    switch (type){
         case LOGOUT:
             return {
                 ...state,
