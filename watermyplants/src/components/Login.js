@@ -9,8 +9,8 @@ const Login = props => {
         <h2>Welcome Back!</h2>
         <div>
           <input
-            type="username"
-            name=""
+            type="username, tel"
+            name="username, tel"
             placeholder="Username or Phone Number"
           />
           <input 
