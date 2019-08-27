@@ -8,8 +8,8 @@ export const SIGNUP_OVER = "SIGNUP_OVER";
 /*user should be of object type 
 {
     'phone': '',
-    'email': '',
     'password': '',
+    'confirmation:'',
     'username': ''
 }
 */
@@ -17,7 +17,7 @@ export const SIGNUP_OVER = "SIGNUP_OVER";
 export const signUpAction = (dispatch, user) => {
   dispatch({ type: IS_SIGNING_UP });
   axiosInstance()
-    .post("/users/register", user)
+    .post("/createnewuser", user)
     .then(res => {
       dispatch({ type: SIGNUP_SUCCESS });
     })
