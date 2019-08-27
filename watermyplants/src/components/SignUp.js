@@ -1,32 +1,74 @@
 //Bri
-
 import React from "react";
+import { useState } from "react-scripts";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
 //^^^Icon for errors
 
 const SignUp = props => {
+  const [login, setLogin] = useState({ user: "", phone: "", password: "" });
+
+  function validatePassword() {
+    // If password.input === confirmPassword.input, then only set the finalized user
+  }
+
+  const changeHandler = e => {
+    console.log(e.target.value);
+    setLogin({ ...login, [e.target.name]: e.target.value });
+    console.log(login);
+  };
+  const submitForm = e => {
+    e.preventDefault();
+    // Calls validatePassword
+    const newLogin = {
+      ...login
+    };
+    props.addNewLogin(newLogin);
+    setLogin({ user: "", password: "" });
+  };
+
   return (
     <section>
       <h1>Water My Plants</h1>
       <form>
         <h2>Let's Get Started!</h2>
         <div>
-          <input type="tel" name="phone" placeholder="Phone Number" />
-          <input type="password" name="password" placeholder="Password" />
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Phone Number"
+            onChange={changeHandler}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            onChange={changeHandler}
+          />
           <input
             type="password"
             name="password"
             placeholder="Confirm Password"
+            onChange={changeHandler}
           />
-          <input type="text" name="username" placeholder="Username" />
-          <button type="submit">Start Watering</button>
+          <input
+            type="text"
+            name="username"
+            placeholder="Username"
+            onChange={changeHandler}
+          />
+          <button type="submit" onSubmit={submitForm}>
+            Start Watering
+          </button>
           <p>
             Have an account? <a href="#">Sign In</a>
           </p>
         </div>
-        <img src="images/signUp.png" alt="Cartoon women with long hair on a computer in front of window." />
+        <img
+          src="images/signUp.png"
+          alt="Cartoon women with long hair on a computer in front of window."
+        />
       </form>
     </section>
   );
