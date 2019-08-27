@@ -13,6 +13,8 @@ const ProfileSettings = props => {
         <input type="tel" name="phone" placeholder="000-000-0000" />
         <button type="submit">edit</button>
         <img src={require("../images/profileSettings.png")} alt="placeholder" />
+        {/* quote goes above this img-- 
+        "Where flowers bloom so does hope." - Lady Bird Johnson */}
       </form>
     </section>
   );
