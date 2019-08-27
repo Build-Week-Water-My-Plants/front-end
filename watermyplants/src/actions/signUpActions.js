@@ -26,13 +26,4 @@ export const signUpAction = (dispatch, user) => {
     });
 };
 
-// axios
-// .post("https://doc-watermyplants.herokuapp.com/createnewuser", user)
-// .then(res => {
-//   console.log(res);
 
-// })
-// .catch(err => {
-//   console.log("sign up didnt work", err);
-
-// });

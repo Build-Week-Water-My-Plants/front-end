@@ -1,44 +1,15 @@
 //Bri
 import React from "react";
-<<<<<<< HEAD
 import axios from "axios";
-=======
-import axios from 'axios'
-import { loginAction } from '../actions'
->>>>>>> 40b047f8afb191a7015f8f8a1b7f7872fe2920ef
+import { connect } from "react";
+import { loginAction } from "../actions";
 // import img from "../../public/images/login.png";
-
 
 const Login = props => {
   const handleSubmit = e => {
-<<<<<<< HEAD
-    axios
-      .post(
-        "https://doc-watermyplants.herokuapp.com/login",
-        `grant_type=password&username=admin&password=password`,
-        {
-          headers: {
-            Authorization: `Basic ${btoa("turtle-banana:banana-turtle")}`,
-            "Content-Type": "application/x-www-form-urlencoded"
-          }
-        }
-      )
-      .then(res => {
-        localStorage.setItem("token", res.data.access_token);
-      })
-      .catch(err => console.dir(err));
     e.preventDefault();
+    props.loginAction({ username: "admin", password: "password" });
   };
-=======
-    e.preventDefault()
-    loginAction(dispatch, {
-      username: 'admin',
-      password: 'password',
-    })
-  }
-
->>>>>>> 40b047f8afb191a7015f8f8a1b7f7872fe2920ef
-
 
   return (
     <section>
@@ -51,16 +22,8 @@ const Login = props => {
             name="username"
             placeholder="Username or Phone Number"
           />
-<<<<<<< HEAD
-          <input type="password" name="password" placeholder="Password" />
-=======
           {/* ^^^ will this be for both? On the design doc it's suppose to be this way but we can just do username */}
-          <input 
-            type="password" 
-            name="password" 
-            placeholder="Password" 
-            />
->>>>>>> 40b047f8afb191a7015f8f8a1b7f7872fe2920ef
+          <input type="password" name="password" placeholder="Password" />
           <a href="#">Forgot your password?</a>
           <button type="submit">Sign In</button>
           <p>
@@ -76,4 +39,10 @@ const Login = props => {
   );
 };
 
-export default Login;
+mapStateToProps = state => {
+  return null;
+};
+export default connect(
+  mapStateToProps,
+  { loginAction }
+)(Login);
