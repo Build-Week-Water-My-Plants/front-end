@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+//^^^Icon for errors
+
 const SignUp = props => {
   const [login, setLogin] = useState({ user: "", phone: "", password: "" });
 
@@ -51,19 +53,16 @@ const SignUp = props => {
       <form onSubmit={handleSubmit}>
         <h2>Let's Get Started!</h2>
         <div>
-          <input
-            type="tel"
-            name="phone"
-            placeholder="Phone Number"
-            onChange={changeHandler}
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            onChange={changeHandler}
-          />
-    
+          <input 
+            type="tel" 
+            name="phonenumber" 
+            placeholder="Phone Number" 
+            />
+          <input 
+            type="password" 
+            name="password" 
+            placeholder="Password" 
+            />
           <input
             type="password"
             name="password"

@@ -1,5 +1,10 @@
 import React from "react";
 import "./App.css";
+
+import { PlantContext } from './contexts/PlantContexts'
+
+import { plantsReducer } from './reducers/reducer'
+
 import Nav from "./components/Nav";
 import PlantForm from "./components/PlantForm";
 
@@ -13,6 +18,7 @@ import PlantList from "./components/PlantList";
 
 function App() {
   return (
+    <PlantContext.Provider value={plantsReducer}>
     <div className="App">
       <Nav />
       {/* <Login /> */}
@@ -25,6 +31,7 @@ function App() {
       {/* Sends an array of objects as dunny data */}
       <PlantList array={PlantsDATA} />
     </div>
+    </PlantContext.Provider>
   );
 }
 
