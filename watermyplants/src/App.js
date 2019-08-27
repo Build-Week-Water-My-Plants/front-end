@@ -7,14 +7,14 @@ import Login from './components/Login.js';
 import SignUp from './components/SignUp'
 import ProfileSettings from "./components/ProfileSettings.js";
 import FirstPlant from "./components/FirstPlant.js";
+import RecoverPassword from "./components/RecoverPassword.js";
 
 function App() {
   return (
     <div className="App">
       {/* <ProfileSettings /> */}
       {/* <Nav /> */}
-      {/* <PlantForm /> */}
-      <FirstPlant />
+      <PlantForm />
     </div>
   );
 }

@@ -3,7 +3,8 @@
 import React from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
+import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
+//^^^Icon for errors
 
 const SignUp = props => {
   return (
@@ -19,13 +20,13 @@ const SignUp = props => {
             name="password"
             placeholder="Confirm Password"
           />
-          <input type="username" name="username" placeholder="Username" />
+          <input type="text" name="username" placeholder="Username" />
           <button type="submit">Start Watering</button>
           <p>
             Have an account? <a href="#">Sign In</a>
           </p>
         </div>
-        <img src="https://via.placeholder.com/150" alt="placeholder" />
+        <img src={require("../images/signUp.png")} alt="Cartoon women with long hair on a computer in front of window." />
       </form>
     </section>
   );

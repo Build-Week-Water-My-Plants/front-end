@@ -2,7 +2,9 @@
 import React from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
+import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
+
+// import img from "../../public/images/login.png";
 
 const Login = props => {
   return (
@@ -23,7 +25,10 @@ const Login = props => {
             Don't have an account? <a href="#">Sign Up</a>
           </p>
         </div>
-        <img src="https://via.placeholder.com/150" alt="placeholder" />
+        <img
+          src={require("../images/login.png")}
+          alt="Cartoon girl with key in hand to unlock a phone."
+        />
       </form>
     </section>
   );
