@@ -1,10 +1,17 @@
 //Bri
 import React from "react";
+<<<<<<< HEAD
 import axios from "axios";
+=======
+import axios from 'axios'
+import { loginAction } from '../actions'
+>>>>>>> 40b047f8afb191a7015f8f8a1b7f7872fe2920ef
 // import img from "../../public/images/login.png";
+
 
 const Login = props => {
   const handleSubmit = e => {
+<<<<<<< HEAD
     axios
       .post(
         "https://doc-watermyplants.herokuapp.com/login",
@@ -22,6 +29,16 @@ const Login = props => {
       .catch(err => console.dir(err));
     e.preventDefault();
   };
+=======
+    e.preventDefault()
+    loginAction(dispatch, {
+      username: 'admin',
+      password: 'password',
+    })
+  }
+
+>>>>>>> 40b047f8afb191a7015f8f8a1b7f7872fe2920ef
+
 
   return (
     <section>
@@ -31,10 +48,19 @@ const Login = props => {
         <div>
           <input
             type="text"
-            name="user"
+            name="username"
             placeholder="Username or Phone Number"
           />
+<<<<<<< HEAD
           <input type="password" name="password" placeholder="Password" />
+=======
+          {/* ^^^ will this be for both? On the design doc it's suppose to be this way but we can just do username */}
+          <input 
+            type="password" 
+            name="password" 
+            placeholder="Password" 
+            />
+>>>>>>> 40b047f8afb191a7015f8f8a1b7f7872fe2920ef
           <a href="#">Forgot your password?</a>
           <button type="submit">Sign In</button>
           <p>

@@ -16,7 +16,7 @@ const ProfileSettings = props => {
         <label>Phone</label>
         <input 
           type="tel" 
-          name="phone" 
+          name="phonenumber" 
           placeholder="000-000-0000" 
           />
         <button type="submit">edit</button>
