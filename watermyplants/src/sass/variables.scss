@@ -8,7 +8,10 @@ $light-pink: #FF83B0;
 $green:#B5E3C2;
 
 
-//fonts
+//fonts--I asked about fonts.
+@import url('https://fonts.googleapis.com/css?family=Signika:400,600,700&display=swap');
+//^^^Don't really know where to put this one for organization.
+$signika: 'Signika', sans-serif;
 
 //breakpoints
 $breakpoint-tablet: 900px;

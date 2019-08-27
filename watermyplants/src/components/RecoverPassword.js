@@ -19,7 +19,7 @@ const RecoverPassword = props => {
         </p>
       </form>
       <img
-        src={require("../images/recoverPassword.png")}
+        src="images/recoverPassword.png"
         alt="Cartoon woman in front of pink trees holding a password sign with asterisks."
       />
     </section>

@@ -26,7 +26,7 @@ const Login = props => {
           </p>
         </div>
         <img
-          src={require("../images/login.png")}
+          src="images/login.png"
           alt="Cartoon girl with key in hand to unlock a phone."
         />
       </form>

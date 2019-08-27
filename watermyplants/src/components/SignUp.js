@@ -26,7 +26,7 @@ const SignUp = props => {
             Have an account? <a href="#">Sign In</a>
           </p>
         </div>
-        <img src={require("../images/signUp.png")} alt="Cartoon women with long hair on a computer in front of window." />
+        <img src="images/signUp.png" alt="Cartoon women with long hair on a computer in front of window." />
       </form>
     </section>
   );
