@@ -33,7 +33,7 @@ const SignUp = props => {
         <div>
           <input 
             type="tel" 
-            name="phone" 
+            name="phonenumber" 
             placeholder="Phone Number" 
             />
           <input 
