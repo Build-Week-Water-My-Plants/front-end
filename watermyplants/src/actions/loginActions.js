@@ -8,7 +8,7 @@ export const LOGIN_FAIL = 'LOGIN_FAIL'
 
 export const LOGOUT = 'LOGOUT'
 
-export const signUpAction = (dispatch, user) => {
+export const loginAction = (dispatch, user) => {
     dispatch({ type: LOGIN_START });
     axiosInstance()
       .post("/login", user)

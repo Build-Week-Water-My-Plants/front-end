@@ -1,13 +1,9 @@
 //Bri
-import React from "react";
-import { useState } from "react-scripts";
+import React, { useState } from "react";
 import axios from "axios";
 
-<<<<<<< HEAD
-=======
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
->>>>>>> dc10f4c69c1bb8dfd3ef74a6a4fe18d8ed7b49ae
 //^^^Icon for errors
 
 const SignUp = props => {

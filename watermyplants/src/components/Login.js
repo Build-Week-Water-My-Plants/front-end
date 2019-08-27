@@ -3,6 +3,7 @@ import React from "react";
 import axios from 'axios'
 // import img from "../../public/images/login.png";
 
+
 const Login = props => {
 
   const handleSubmit = e => {
@@ -13,6 +14,7 @@ const Login = props => {
       }
     })
       .then(res => {
+        console.log(res)
         localStorage.setItem('token', res.data.access_token);
       })
       .catch(err => console.dir(err));
@@ -28,14 +30,10 @@ const Login = props => {
         <div>
           <input
             type="text"
-            name="user"
+            name="text"
             placeholder="Username or Phone Number"
           />
-          <input 
-            type="password" 
-            name="password" 
-            placeholder="Password" 
-            />
+          <input type="password" name="password" placeholder="Password" />
           <a href="#">Forgot your password?</a>
           <button type="submit">Sign In</button>
           <p>
