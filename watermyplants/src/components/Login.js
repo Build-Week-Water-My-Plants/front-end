@@ -1,16 +1,29 @@
 //Bri
 import React from "react";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
-
+import axios from 'axios'
 // import img from "../../public/images/login.png";
 
 const Login = props => {
+
+  const handleSubmit = e => {
+    axios.post('https://doc-watermyplants.herokuapp.com/login', `grant_type=password&username=admin&password=password`, {
+      headers: {
+        Authorization: `Basic ${btoa('turtle-banana:banana-turtle')}`,
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    })
+      .then(res => {
+        localStorage.setItem('token', res.data.access_token);
+      })
+      .catch(err => console.dir(err));
+    e.preventDefault();
+  }
+
+
   return (
     <section>
       <h1>Water My Plants</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <h2>Welcome Back!</h2>
         <div>
           <input

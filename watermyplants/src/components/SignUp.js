@@ -1,6 +1,7 @@
 //Bri
 import React from "react";
 import { useState } from "react-scripts";
+import axios from "axios";
 
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
@@ -28,10 +29,31 @@ const SignUp = props => {
     setLogin({ user: "", password: "" });
   };
 
+  const handleSubmit = e => {
+    axios
+      .post(
+        "http://doc-watermyplants.herokuapp.com/createnewuser",
+        `grant_type=password&username=admin&password=password`,
+        {
+          headers: {
+            Authorization: `Basic ${btoa("turtle-banana:banana-turtle")}`,
+            "Content-Type": "application/x-www-form-urlencoded",
+            user: { password: "" }
+          }
+        }
+      )
+      .then(res => {
+        localStorage.setItem("token", res.data.access_token);
+        this.props.history.push("/login");
+      })
+      .catch(err => console.dir(err));
+    e.preventDefault();
+  };
+
   return (
     <section>
       <h1>Water My Plants</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <h2>Let's Get Started!</h2>
         <div>
           <input
