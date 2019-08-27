@@ -1,17 +1,16 @@
 //Bri
 import React from "react";
 import axios from 'axios'
-// import { loginAction } from '../actions'
+import { connect } from 'react-redux'
+import {loginAction} from '../actions';
+// import img from "../../public/images/login.png";
 
 
 const Login = props => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    // loginAction(dispatch, {
-    //   username: 'admin',
-    //   password: 'password',
-    // })
+    props.loginAction({username: 'admin', password: 'password'})
   }
 
 
@@ -48,4 +47,6 @@ const Login = props => {
   );
 };
 
-export default Login;
+
+export default connect(null, {loginAction}
+)(Login);

@@ -18,12 +18,11 @@ import PlantList from "./components/PlantList";
 
 function App() {
   return (
-    <PlantContext.Provider value={plantsReducer}>
     <div className="App">
       <Nav />
-      {/* <Login /> */}
+      <Login />
       {/* <RecoverPassword /> */}
-      {/* <SignUp /> */}
+      <SignUp />
       {/* <ProfileSettings /> */}
       {/* <FirstPlant /> */}
       {/* <PlantForm /> */}
@@ -31,7 +30,7 @@ function App() {
       {/* Sends an array of objects as dunny data */}
       <PlantList array={PlantsDATA} />
     </div>
-    </PlantContext.Provider>
+
   );
 }
 
