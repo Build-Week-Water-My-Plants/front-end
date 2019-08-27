@@ -6,13 +6,15 @@ import PlantForm from "./components/PlantForm";
 import Login from './components/Login.js';
 import SignUp from './components/SignUp'
 import ProfileSettings from "./components/ProfileSettings.js";
+import FirstPlant from "./components/FirstPlant.js";
 
 function App() {
   return (
     <div className="App">
       {/* <ProfileSettings /> */}
-      <Nav />
-      <PlantForm />
+      {/* <Nav /> */}
+      {/* <PlantForm /> */}
+      <FirstPlant />
     </div>
   );
 }
