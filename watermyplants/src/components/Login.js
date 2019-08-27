@@ -1,7 +1,7 @@
 //Bri
 import React from "react";
 import axios from 'axios'
-import { loginAction } from '../actions'
+import { loginAction } from '../actions/actions'
 // import img from "../../public/images/login.png";
 
 
@@ -9,7 +9,7 @@ const Login = props => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    loginAction(dispatch, {
+    props.loginAction({
       username: 'admin',
       password: 'password',
     })
