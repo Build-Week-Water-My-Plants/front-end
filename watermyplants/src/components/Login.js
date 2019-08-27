@@ -1,7 +1,7 @@
 //Bri
 import React from "react";
 import axios from 'axios'
-// import img from "../../public/images/login.png";
+
 
 const Login = props => {
 
