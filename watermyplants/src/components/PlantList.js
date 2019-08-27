@@ -13,12 +13,12 @@ const PlantList = props => {
         {/* Some map function goes here */}
         {props.array.map(plants => {
           return(
-            // console.log(plants),
+            console.log(plants),
             <PlantCard
-              key={props.id}
-              id={props.id}
-              name={props.name}
-              species={props.species} 
+              key={plants.id}
+              id={plants.id}
+              name={plants.name}
+              species={plants.species} 
             />
           );
         })}
