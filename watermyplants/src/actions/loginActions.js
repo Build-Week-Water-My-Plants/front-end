@@ -1,4 +1,5 @@
-import {axiosWithAuth } from '../utils/axiosWithAuth'
+// import {axiosWithAuth } from '../utils/axiosWithAuth'
+import { axiosInstance } from "../utils/axiosInstance";
 import axios from 'axios';
 
 export const LOGIN_START = 'LOGIN_START'
@@ -7,10 +8,10 @@ export const LOGIN_FAIL = 'LOGIN_FAIL'
 
 export const LOGOUT = 'LOGOUT'
 
-export const login = (dispatch) => {
-    dispatch({ type: LOGIN_START})
-    axiosWithAuth()
-    .post('http://doc-watermyplants.herokuapp.com/login')
+export const signUpAction = (dispatch, user) => {
+    dispatch({ type: LOGIN_START });
+    axiosInstance()
+      .post("/login", user)
     .then(response => {
         dispatch({ type: LOGIN_SUCCESS, payload: response.data.message})
         localStorage.setItem('token')
