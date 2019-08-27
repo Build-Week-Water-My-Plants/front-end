@@ -33,10 +33,14 @@ const Login = props => {
         <div>
           <input
             type="text"
-            name="text"
+            name="user"
             placeholder="Username or Phone Number"
           />
-          <input type="password" name="password" placeholder="Password" />
+          <input 
+            type="password" 
+            name="password" 
+            placeholder="Password" 
+            />
           <a href="#">Forgot your password?</a>
           <button type="submit">Sign In</button>
           <p>

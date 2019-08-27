@@ -7,7 +7,7 @@ const ProfileSettings = props => {
       <h2>Profile Information</h2>
       <form>
         <label>Username</label>
-        <input type="username" name="username" placeholder="Example" />
+        <input type="text" name="username" placeholder="Example" />
         <button type="submit">edit</button>
         <label>Phone</label>
         <input type="tel" name="phone" placeholder="000-000-0000" />
