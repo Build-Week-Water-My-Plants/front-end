@@ -28,9 +28,10 @@ const Login = props => {
         <div>
           <input
             type="text"
-            name="user"
+            name="username"
             placeholder="Username or Phone Number"
           />
+          {/* ^^^ will this be for both? On the design doc it's suppose to be this way but we can just do username */}
           <input 
             type="password" 
             name="password" 
