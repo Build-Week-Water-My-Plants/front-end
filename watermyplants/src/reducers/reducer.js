@@ -55,7 +55,7 @@ const initialState = {
     }
 }
 
-export const plantsReducer = (state, action) => {
+export const plantsReducer = (state = initialState, action) => {
     switch (action.type) {
         case SIGNUP_START: 
             return {
