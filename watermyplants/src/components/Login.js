@@ -1,6 +1,11 @@
 //Bri
 import React from "react";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
+
+// import img from "../../public/images/login.png";
+
 const Login = props => {
   return (
     <section>
@@ -9,8 +14,8 @@ const Login = props => {
         <h2>Welcome Back!</h2>
         <div>
           <input
-            type="username, tel"
-            name="username, tel"
+            type="text"
+            name="text"
             placeholder="Username or Phone Number"
           />
           <input type="password" name="password" placeholder="Password" />
@@ -20,7 +25,10 @@ const Login = props => {
             Don't have an account? <a href="#">Sign Up</a>
           </p>
         </div>
-        <img src="https://via.placeholder.com/150" alt="placeholder" />
+        <img
+          src="images/login.png"
+          alt="Cartoon girl with key in hand to unlock a phone."
+        />
       </form>
     </section>
   );
