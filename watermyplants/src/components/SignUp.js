@@ -1,11 +1,6 @@
 //Bri
-import React from "react";
-import { useState } from "react-scripts";
+import React, { useState } from "react";
 import axios from "axios";
-
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
-//^^^Icon for errors
 
 const SignUp = props => {
   const [login, setLogin] = useState({ user: "", phone: "", password: "" });
@@ -56,18 +51,6 @@ const SignUp = props => {
       <form onSubmit={handleSubmit}>
         <h2>Let's Get Started!</h2>
         <div>
-<<<<<<< HEAD
-          <input 
-            type="tel" 
-            name="phonenumber" 
-            placeholder="Phone Number" 
-            />
-          <input 
-            type="password" 
-            name="password" 
-            placeholder="Password" 
-            />
-=======
           <input
             type="tel"
             name="phone"
@@ -81,7 +64,6 @@ const SignUp = props => {
             onChange={changeHandler}
           />
     
->>>>>>> dc10f4c69c1bb8dfd3ef74a6a4fe18d8ed7b49ae
           <input
             type="password"
             name="password"
