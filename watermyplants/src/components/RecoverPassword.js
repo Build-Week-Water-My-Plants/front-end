@@ -9,7 +9,11 @@ const RecoverPassword = props => {
       <form>
         <h3>Recover Password</h3>
         <p>Please enter your phone number to reset password.</p>
-        <input type="tel" name="phone" placeholder="Phone Number" />
+        <input 
+          type="tel" 
+          name="phone" 
+          placeholder="Phone Number" 
+          />
         <button type="submit">Send Link</button>
         <p>
           Don't have an account? <a href="#">Sign Up</a>
