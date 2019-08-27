@@ -1,25 +1,20 @@
 //Bri
 import React from "react";
 import axios from 'axios'
+import { loginAction } from '../actions'
 // import img from "../../public/images/login.png";
 
 
 const Login = props => {
 
   const handleSubmit = e => {
-    axios.post('https://doc-watermyplants.herokuapp.com/login', `grant_type=password&username=admin&password=password`, {
-      headers: {
-        Authorization: `Basic ${btoa('turtle-banana:banana-turtle')}`,
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }
+    e.preventDefault()
+    loginAction(dispatch, {
+      username: 'admin',
+      password: 'password',
     })
-      .then(res => {
-        console.log(res)
-        localStorage.setItem('token', res.data.access_token);
-      })
-      .catch(err => console.dir(err));
-    e.preventDefault();
   }
+
 
 
   return (
@@ -30,12 +25,6 @@ const Login = props => {
         <div>
           <input
             type="text"
-<<<<<<< HEAD
-            name="text"
-            placeholder="Username or Phone Number"
-          />
-          <input type="password" name="password" placeholder="Password" />
-=======
             name="username"
             placeholder="Username or Phone Number"
           />
@@ -45,7 +34,6 @@ const Login = props => {
             name="password" 
             placeholder="Password" 
             />
->>>>>>> 4a7c4917e81c05863d97a53142699930d6f8e615
           <a href="#">Forgot your password?</a>
           <button type="submit">Sign In</button>
           <p>
