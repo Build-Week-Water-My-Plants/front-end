@@ -11,12 +11,17 @@ const PlantList = props => {
     <section>
       <div className="plant-summary-component">
         {/* Some map function goes here */}
-
-        {/* This is a component, call the component for EACH array object inside `props.array` */}
-        <h3>Nickname</h3>
-        <h5>Species</h5>
-        <img src="" alt="Calendar picture" />
-        {/* ****************************************888 */}
+        {props.array.map(plants => {
+          return(
+            // console.log(plants),
+            <PlantCard
+              key={props.id}
+              id={props.id}
+              name={props.name}
+              species={props.species} 
+            />
+          );
+        })}
       </div>
       <img src="" alt="Add more plants" />
     </section>
