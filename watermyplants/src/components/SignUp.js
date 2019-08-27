@@ -1,6 +1,5 @@
 //Bri
-import React from "react";
-import { useState } from "react-scripts";
+import React, { useState } from "react";
 import axios from "axios";
 
 //^^^Icon for errors
