@@ -68,6 +68,7 @@ const SignUp = props => {
             placeholder="Password"
             onChange={changeHandler}
           />
+    
           <input
             type="password"
             name="password"
