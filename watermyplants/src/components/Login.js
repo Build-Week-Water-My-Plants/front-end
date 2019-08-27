@@ -1,19 +1,18 @@
 //Bri
 import React from "react";
-import axios from 'axios'
-import { loginAction } from '../actions'
-// import img from "../../public/images/login.png";
+// import axios from 'axios'
+// import { loginAction } from '../actions'
 
 
 const Login = props => {
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    loginAction(dispatch, {
-      username: 'admin',
-      password: 'password',
-    })
-  }
+  // const handleSubmit = e => {
+  //   e.preventDefault()
+  //   loginAction(dispatch, {
+  //     username: 'admin',
+  //     password: 'password',
+  //   })
+  // }
 
 
 
