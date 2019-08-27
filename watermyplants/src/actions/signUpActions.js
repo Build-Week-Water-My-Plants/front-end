@@ -17,7 +17,7 @@ export const SIGNUP_OVER = "SIGNUP_OVER";
 export const signUpAction = (dispatch, user) => {
   dispatch({ type: IS_SIGNING_UP });
   axiosInstance()
-    .post("/createnewuser", user)
+    .post("https://doc-watermyplants.herokuapp.com/createnewuser", user)
     .then(res => {
       dispatch({ type: SIGNUP_SUCCESS });
     })
@@ -25,3 +25,14 @@ export const signUpAction = (dispatch, user) => {
       dispatch({ type: SIGNUP_ERROR, payload: err.response.data.message });
     });
 };
+
+// axios
+// .post("https://doc-watermyplants.herokuapp.com/createnewuser", user)
+// .then(res => {
+//   console.log(res);
+
+// })
+// .catch(err => {
+//   console.log("sign up didnt work", err);
+
+// });
