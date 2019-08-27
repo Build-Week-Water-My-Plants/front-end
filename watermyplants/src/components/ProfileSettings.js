@@ -12,7 +12,7 @@ const ProfileSettings = props => {
         <label>Phone</label>
         <input type="tel" name="phone" placeholder="000-000-0000" />
         <button type="submit">edit</button>
-        <img src="https://via.placeholder.com/150" alt="placeholder" />
+        <img src={require("../images/profileSettings.png")} alt="placeholder" />
       </form>
     </section>
   );

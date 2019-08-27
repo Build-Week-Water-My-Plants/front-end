@@ -12,9 +12,9 @@ import RecoverPassword from "./components/RecoverPassword.js";
 function App() {
   return (
     <div className="App">
-      {/* <ProfileSettings /> */}
+      <ProfileSettings />
       {/* <Nav /> */}
-      <PlantForm />
+      {/* <PlantForm /> */}
     </div>
   );
 }
