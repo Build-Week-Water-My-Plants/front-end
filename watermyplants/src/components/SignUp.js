@@ -1,7 +1,8 @@
 //Bri
 import React, { useState } from "react";
 import axios from "axios";
-
+import {connect} from 'react-redux';
+import {signupAction} from '../actions';
 //^^^Icon for errors
 
 const SignUp = props => {
@@ -27,24 +28,8 @@ const SignUp = props => {
   };
 
   const handleSubmit = e => {
-    axios
-      .post(
-        "http://doc-watermyplants.herokuapp.com/createnewuser",
-        `grant_type=password&username=admin&password=password`,
-        {
-          headers: {
-            Authorization: `Basic ${btoa("turtle-banana:banana-turtle")}`,
-            "Content-Type": "application/x-www-form-urlencoded",
-            user: { password: "" }
-          }
-        }
-      )
-      .then(res => {
-        localStorage.setItem("token", res.data.access_token);
-        this.props.history.push("/login");
-      })
-      .catch(err => console.dir(err));
-    e.preventDefault();
+     e.preventDefault();
+     props.signupAction({username: 'testing123', password: 'test'})
   };
 
   return (
@@ -91,4 +76,4 @@ const SignUp = props => {
   );
 };
 
-export default SignUp;
+export default connect(null, {signupAction})(SignUp);

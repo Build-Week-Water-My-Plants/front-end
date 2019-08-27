@@ -22,41 +22,68 @@ export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS';
 export const SIGNUP_FAILED = 'SIGNUP_FAILED';
 
 ///login 
- export const loginAction = ( dispatch, user) => {
-     dispatch ({ type: LOGIN_START})
-    axios.post('https://doc-watermyplants.herokuapp.com/login', `grant_type=password&username=${user.username}&password=${user.password}`, {
-      headers: {
-        Authorization: `Basic ${btoa('turtle-banana:banana-turtle')}`,
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }
-    })
-      .then(res => {
-        console.log(res)
-        localStorage.setItem('token', res.data.access_token);
-        dispatch ({ type: LOGIN_SUCCESS})
-      })
-      .catch(err => console.dir(err));
-      dispatch({ type: LOGIN_FAIL})
-  }
+export const loginAction = (user) => {
+    return dispatch => {
+        dispatch({type: LOGIN_START})
+        axios.post('https://doc-watermyplants.herokuapp.com/login', `grant_type=password&username=${user.username}&password=${user.password}`, {
+            headers: {
+                Authorization: `Basic ${btoa('turtle-banana:banana-turtle')}`,
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        })
+            .then(res => {
+                console.log(res)
+                localStorage.setItem('token', res.data.access_token);
+                dispatch({ type: LOGIN_SUCCESS })
+            })
+            .catch(err => {
+                console.dir(err)
+                dispatch({ type: LOGIN_FAIL })
+            });
+    }
+
+}
 
 ///plants
-export const plantsAction = (dispatch) => {
-    dispatch({ type: GETTING_PLANTS})
+export const plantsAction = (username) => {
+    return dispatch => {
+        dispatch({type: GETTING_PLANTS})
+        axiosWithAuth()
+        .get(`https://doc-watermyplants.herokuapp.com/plants/username/${username}`)
+        .then(res => {
+            console.log(res)
+            dispatch({type: GOT_PLANTS, payload: res.data})
+        })
+        .catch(err => {
+            console.log(err)
+            dispatch({type: ERROR_GETTING_PLANTS, payload: err})
+        })
+    }
 }
 
 
 //plant
 export const plantAction = (dispatch) => {
-    dispatch({ type: GETTING_PLANT})
+    dispatch({ type: GETTING_PLANT })
 }
 
 //signup
-export const signupAction = (dispatch) => {
-    dispatch({ type: SIGNUP_START})
+export const signupAction = (user) => {
+    return dispatch => {
+        dispatch({ type: SIGNUP_START })
+        axios
+            .post('https://doc-watermyplants.herokuapp.com/createnewuser', user)
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
 }
 
 
 //user
 export const userAction = (dispatch) => {
-    dispatch({ type: GETTING_USER})
+    dispatch({ type: GETTING_USER })
 }
