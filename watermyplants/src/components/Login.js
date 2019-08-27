@@ -30,10 +30,22 @@ const Login = props => {
         <div>
           <input
             type="text"
+<<<<<<< HEAD
             name="text"
             placeholder="Username or Phone Number"
           />
           <input type="password" name="password" placeholder="Password" />
+=======
+            name="username"
+            placeholder="Username or Phone Number"
+          />
+          {/* ^^^ will this be for both? On the design doc it's suppose to be this way but we can just do username */}
+          <input 
+            type="password" 
+            name="password" 
+            placeholder="Password" 
+            />
+>>>>>>> 4a7c4917e81c05863d97a53142699930d6f8e615
           <a href="#">Forgot your password?</a>
           <button type="submit">Sign In</button>
           <p>

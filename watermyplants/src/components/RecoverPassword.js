@@ -11,7 +11,7 @@ const RecoverPassword = props => {
         <p>Please enter your phone number to reset password.</p>
         <input 
           type="tel" 
-          name="phone" 
+          name="phonenumber" 
           placeholder="Phone Number" 
           />
         <button type="submit">Send Link</button>
