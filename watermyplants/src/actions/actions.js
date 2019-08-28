@@ -59,6 +59,10 @@ export const loginAction = user => {
       .then(res => {
         console.log(res);
         localStorage.setItem("token", res.data.access_token);
+        axiosWithAuth()
+            .get('https://doc-watermyplants.herokuapp.com/users/getusername')
+            .then(res => console.log(res))
+            .catch(err => console.log(err.response))
         dispatch({ type: LOGIN_SUCCESS });
       })
       .catch(err => {
@@ -142,7 +146,7 @@ export const plantsAction = username => {
     dispatch({ type: GETTING_PLANTS });
     axiosWithAuth()
       .get(
-        `https://doc-watermyplants.herokuapp.com/plants/userName/${username}`
+        `https://doc-watermyplants.herokuapp.com/plants/username/${username}`
       )
       .then(res => {
         console.log(res);
