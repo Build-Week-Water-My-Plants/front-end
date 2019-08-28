@@ -12,7 +12,16 @@ import {
     LOGIN_SUCCESS,
     SIGNUP_FAILED,
     SIGNUP_START,
-    SIGNUP_SUCCESS
+    SIGNUP_SUCCESS,
+    DELETEPLANT_FAIL,
+    DELETEPLANT_START,
+    DELETEPLANT_SUCCESS,
+    DELETEUSER_FAIL,
+    DELETEUSER_START,
+    DELETEUSER_SUCCESS,
+    UPDATE_USER_FAIL,
+    UPDATE_USER_START,
+    UPDATE_USER_SUCCESS
 } from '../actions/actions';
 
 
@@ -31,6 +40,7 @@ const initialState = {
     },
 
     user: {
+        userid:'',
         password: '',
         username: '',
         phonenumber: '',
@@ -45,11 +55,11 @@ const initialState = {
     },
 
     plant: {
-        id: '',
+        plantid: '',
         species: '',
         name: '',
-        daysofweek: [],
         time: '',
+        user:'',
         isLoading: false,
         error: '',
     }
@@ -196,6 +206,35 @@ export const plantsReducer = (state = initialState, action) => {
                     error: action.payload,
                 }
             }
+        case DELETEPLANT_FAIL:
+            return {
+                ...state,
+                plant: {
+                    ...state.plant,
+                    isLoading:false,
+                    error: action.payload
+                }
+            }
+        case DELETEPLANT_START:
+            return {
+                ...state,
+                plant: {
+                    ...state.plant,
+                    isLoading: true,
+                    err:''
+                }
+            }
+        case DELETEPLANT_SUCCESS:
+            return {
+                ...state,
+                plant: {
+                    ...state.plants,
+                    error: '',
+                    data: state.data.filter(plant => plant.id !== payload),
+                    isLoading: false,
+                }
+            }
+        ///update user, delete user needs added
     }
 }
 
