@@ -1,4 +1,5 @@
 //Bri
+//is this the one we wanted as the modal?
 import React from "react";
 
 const Plant = props => {
