@@ -76,6 +76,7 @@ export const loginAction = user => {
 export const signupAction = user => {
   return dispatch => {
     dispatch({ type: SIGNUP_START });
+    console.log("signupAction initiated", user);
     axios
       .post("https://doc-watermyplants.herokuapp.com/createnewuser", user)
       .then(res => {
