@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import { Route, Link } f rom "react-router-dom";
 import { connect } from "react-redux";
 import { loginAction } from "../actions";
 import { Form, Field, withFormik } from "formik";
@@ -28,12 +29,12 @@ const Login = props => {
               <p className="error">{errors.password}</p>
             )}
           </div>
-          <button onClick={(e) =>handleSubmit(e)}type="submit">Create Account</button>
+          <button onClick={(e) =>handleSubmit(e)}type="submit">Login</button>
         </div>
         <div className="sign-in">
           <div className="no-account">
-            <a href="#">Have an account?</a>
-            <p>Sign In</p>
+            {/* <p>Don't have an account?</p>
+            <Link exact to="/">Sign Up</Link> */}
           </div>
         </div>
       </Form>
