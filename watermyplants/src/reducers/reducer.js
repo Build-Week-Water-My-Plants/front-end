@@ -16,6 +16,12 @@ import {
     DELETEPLANT_FAIL,
     DELETEPLANT_START,
     DELETEPLANT_SUCCESS,
+    UPDATE_PLANT_FAILED,
+    UPDATE_PLANT_START,
+    UPDATE_PLANT_SUCCESS,
+    ADD_PLANT_FAILED,
+    ADD_PLANT_START,
+    ADD_PLANT_SUCCESS,
     DELETEUSER_FAIL,
     DELETEUSER_START,
     DELETEUSER_SUCCESS,
@@ -40,7 +46,7 @@ const initialState = {
     },
 
     user: {
-        userid:'',
+        userid: '',
         password: '',
         username: '',
         phonenumber: '',
@@ -59,7 +65,7 @@ const initialState = {
         species: '',
         name: '',
         time: '',
-        user:'',
+        user: '',
         isLoading: false,
         error: '',
     }
@@ -67,7 +73,7 @@ const initialState = {
 
 export const plantsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case SIGNUP_START: 
+        case SIGNUP_START:
             return {
                 ...state,
                 signUp: {
@@ -76,7 +82,7 @@ export const plantsReducer = (state = initialState, action) => {
                     error: '',
                 }
             }
-        case SIGNUP_SUCCESS: 
+        case SIGNUP_SUCCESS:
             return {
                 ...state,
                 signUp: {
@@ -85,7 +91,7 @@ export const plantsReducer = (state = initialState, action) => {
                     error: '',
                 }
             }
-        case SIGNUP_FAILED: 
+        case SIGNUP_FAILED:
             return {
                 ...state,
                 signUp: {
@@ -95,16 +101,16 @@ export const plantsReducer = (state = initialState, action) => {
                 }
             }
 
-        case LOGIN_START: 
+        case LOGIN_START:
             return {
                 ...state,
                 login: {
                     isLoggingIn: true,
                     error: '',
                     isLoggedIin: false,
-                }, 
+                },
             }
-        case LOGIN_SUCCESS: 
+        case LOGIN_SUCCESS:
             return {
                 ...state,
                 login: {
@@ -113,17 +119,17 @@ export const plantsReducer = (state = initialState, action) => {
                     error: '',
                 },
             }
-        case LOGIN_FAIL: 
+        case LOGIN_FAIL:
             return {
                 ...state,
-                login : {
+                login: {
                     isLoggedIin: false,
                     isLoggingIn: false,
                     error: action.payload,
                 }
             }
-        
-        case GETTING_USER: 
+
+        case GETTING_USER:
             return {
                 ...state,
                 user: {
@@ -132,7 +138,7 @@ export const plantsReducer = (state = initialState, action) => {
                     error: '',
                 }
             }
-        case GOT_USER: 
+        case GOT_USER:
             return {
                 ...state,
                 user: {
@@ -141,7 +147,7 @@ export const plantsReducer = (state = initialState, action) => {
                     error: '',
                 }
             }
-        case ERROR_GETTING_USER: 
+        case ERROR_GETTING_USER:
             return {
                 ...state,
                 user: {
@@ -150,7 +156,7 @@ export const plantsReducer = (state = initialState, action) => {
                     ...state.user,
                 }
             }
-        case GETTING_PLANTS: 
+        case GETTING_PLANTS:
             return {
                 ...state,
                 plants: {
@@ -159,7 +165,7 @@ export const plantsReducer = (state = initialState, action) => {
                     ...state.plants,
                 }
             }
-        case GOT_PLANTS: 
+        case GOT_PLANTS:
             return {
                 ...state,
                 plants: {
@@ -169,8 +175,8 @@ export const plantsReducer = (state = initialState, action) => {
                     isLoading: false,
                 }
             }
-        
-        case ERROR_GETTING_PLANTS: 
+
+        case ERROR_GETTING_PLANTS:
             return {
                 ...state,
                 plants: {
@@ -179,7 +185,7 @@ export const plantsReducer = (state = initialState, action) => {
                     ...state.plants,
                 }
             }
-        case GETTING_PLANT: 
+        case GETTING_PLANT:
             return {
                 ...state,
                 plant: {
@@ -188,7 +194,7 @@ export const plantsReducer = (state = initialState, action) => {
                     ...state.plant,
                 }
             }
-        case GOT_PLANT: 
+        case GOT_PLANT:
             return {
                 ...state,
                 plant: {
@@ -197,7 +203,7 @@ export const plantsReducer = (state = initialState, action) => {
                     error: '',
                 }
             }
-        case ERROR_GETTING_PLANT: 
+        case ERROR_GETTING_PLANT:
             return {
                 ...state,
                 plant: {
@@ -206,46 +212,135 @@ export const plantsReducer = (state = initialState, action) => {
                     error: action.payload,
                 }
             }
+        case ADD_PLANT_START:
+            return {
+                ...state,
+                plants: {
+                    ...state.plants,
+                    isLoading: true,
+                    error: '',
+                }
+            }
+        case ADD_PLANT_START: 
+            return {
+                ...state,
+                plants: {
+                    ...state.plants,
+                    data: [...action.payload],
+                    isLoading: false,
+                    error: '',
+                }
+            }
+
+        case ADD_PLANT_FAILED: 
+            return {
+                ...state,
+                plants: {
+                    ...state.plants,
+                    isLoading: false,
+                    error: action.payload,
+                }
+            }
+        case UPDATE_PLANT_START: 
+            return {
+                ...state,
+                plants: {
+                    ...state.plants,
+                    isLoading: true,
+                    error: '',
+                }
+            }
+            case UPDATE_PLANT_SUCCESS: 
+            return {
+                ...state,
+                plants: {
+                    ...state.plants,
+                    data: [...action.payload],
+                    isLoading: false,
+                    error: '',
+                }
+            }
+            case UPDATE_PLANT_FAILED: 
+            return {
+                ...state,
+                plants: {
+                    ...state.plants,
+                    isLoading: false,
+                    error: action.payload,
+                }
+            }
         case DELETEPLANT_FAIL:
             return {
                 ...state,
-                plant: {
-                    ...state.plant,
-                    isLoading:false,
+                plants: {
+                    ...state.plants,
+                    isLoading: false,
                     error: action.payload
                 }
             }
         case DELETEPLANT_START:
             return {
                 ...state,
-                plant: {
-                    ...state.plant,
+                plants: {
+                    ...state.plants,
                     isLoading: true,
-                    err:''
+                    err: ''
                 }
             }
         case DELETEPLANT_SUCCESS:
             return {
                 ...state,
-                plant: {
+                plants: {
                     ...state.plants,
                     error: '',
-                    data: state.data.filter(plant => plant.id !== action.payload),
+                    data: [...action.payload],
                     isLoading: false,
                 }
             }
+
+        case UPDATE_USER_START:
+            return {
+                ...state,
+                user: {
+                    ...state.user,
+                    isLoading: true,
+                    error: '',
+                }
+            }
+
+        case UPDATE_USER_SUCCESS:
+            return {
+                ...state,
+                user: {
+                    ...action.payload,
+                    isLoading: false,
+                    error: '',
+                }
+            }
+
+        case UPDATE_USER_FAIL:
+            return {
+                ...state,
+                user: {
+                    ...state.user,
+                    isLoading: false,
+                    error: action.payload,
+                }
+            }
+
+
         ///update user, delete user needs added
     }
 }
 
 
-// //export const loginReducer = (state=initialState, { type, payload}) => {
-    // ERROR_GETTING_USER,
-    // GETTING_PLANT, GOT_PLANT,
-    // ERROR_GETTING_PLANT,
-    // GETTING_PLANTS,
-    // GOT_PLANTS,
-    // ERROR_GETTING_PLANTS,
+
+    // DELETEUSER_FAIL,
+    // DELETEUSER_START,
+    // DELETEUSER_SUCCESS,
+    // UPDATE_USER_FAIL,
+    // UPDATE_USER_START,
+    // UPDATE_USER_SUCCESS
 //     switch (type){
 //         case LOGIN_FAIL:
 //             return{
