@@ -62,7 +62,7 @@ export const loginAction = user => {
         axiosWithAuth()
             .get('https://doc-watermyplants.herokuapp.com/users/getusername')
             .then(res => console.log(res))
-            .catch(err => console.log(err))
+            .catch(err => console.log(err.response))
         dispatch({ type: LOGIN_SUCCESS });
       })
       .catch(err => {
