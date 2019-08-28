@@ -1,10 +1,17 @@
 //Kate
-import React from "react";
+import React, { useState, useEffect } from "react";
+import array from "./PlantsDATA.js";
 
 //more input fields 
 //local state
 
 const PlantForm = props => {
+  console.log("These are props: ",props);
+  console.log("This is the array ", props.array)
+  const [plants, setPlants] = useState([]);
+  // useEffect(() => {
+    
+  // }, []);
   return (
     <section>
       <h2>Add Plant</h2>
