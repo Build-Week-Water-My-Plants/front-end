@@ -2,13 +2,19 @@
 import React from "react";
 import axios from "axios";
 import { connect } from "react-redux";
-import { loginAction } from "../actions";
+import { loginAction, addPlant, plantsAction } from "../actions";
 // import img from "../../public/images/login.png";
 
 const Login = props => {
   const handleSubmit = e => {
     e.preventDefault();
     props.loginAction({ username: "admin", password: "password" });
+    props.addPlant({species: 'testplant', name: 'test the plant', time: '28-08-2019 9:00:00', location: 'A house', user: {
+      userid: 4,
+      username: 'admin',
+      
+    }})
+    props.plantsAction('admin')
   };
 
   return (
@@ -41,5 +47,5 @@ const Login = props => {
 
 export default connect(
   null,
-  { loginAction }
+  { loginAction, addPlant, plantsAction}
 )(Login);
