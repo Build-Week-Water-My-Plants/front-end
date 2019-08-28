@@ -9,7 +9,6 @@ import { plantsReducer } from "./reducers/reducer";
 
 import Nav from "./components/Nav";
 import PlantForm from "./components/PlantForm";
-
 import Login from "./components/Login.js";
 import SignUp from "./components/SignUp";
 import ProfileSettings from "./components/ProfileSettings.js";
@@ -23,14 +22,14 @@ function App() {
     <div className="App">
       <Nav />
 
+      <Route exact path="/" render={props => <SignUp {...props} />} />
       <Route path="/login" render={props => <Login {...props} />} />
-      <Route path="/SignUp" render={props => <SignUp {...props} />} />
-      <PrivateRoute path="/plantList" render={props => <PlantList {...props}/>} />
-      <PrivateRoute path="/firstPlant" render={props => <FirstPlant {...props}/>} />
-      <PrivateRoute path="/profile" render={props => <ProfileSettings {...props}/>} />
+      <Route path="/plantList" render={props => <PlantList {...props}/>} />
+      <Route path="/firstPlant" render={props => <FirstPlant {...props}/>} />
+      <Route path="/profile" render={props => <ProfileSettings {...props}/>} />
 
       {/* this page shouldn't be functional */}
-      <PrivateRoute path="/recoverPassword" render={props => <RecoverPassword {...props}/>} />
+      <Route path="/recoverPassword" render={props => <RecoverPassword {...props}/>} />
 
       {/* Sends an array of objects as dunny data */}
       <Route path="/plant" component={PlantList} />

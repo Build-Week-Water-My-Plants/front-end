@@ -1,6 +1,9 @@
 //Kate
 import React from "react";
 
+//more input fields 
+//local state
+
 const PlantForm = props => {
   return (
     <section>
@@ -42,14 +45,16 @@ const PlantForm = props => {
               <h4>Sun</h4>
             </button>
           </div>
-          <div class="time-chosen">
+          {/* <div class="time-chosen">
             <input type="number" id="hour" name="hour" min="00" />
             <p>:</p>
             <input type="number" id="minute" name="minute" min="00" max="60" />
-          </div>
-          <button class="am">am</button>
+          </div> */}
+          <input type="text" name="time" placeholder="28-08-2019" />
+          {/* <button class="am">am</button>
           <button class="pm">pm</button>
-          <br />
+          <br /> */}
+          <input type="text" name="location" placeholder="Kitchen" />
           <button type="submit">Save plant</button>
         </div>
         <img src="" alt="Some img illustration" />
