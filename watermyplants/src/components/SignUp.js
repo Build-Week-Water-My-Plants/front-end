@@ -29,7 +29,7 @@ const SignUp = props => {
 
   const handleSubmit = e => {
      e.preventDefault();
-     props.signupAction({username: 'testing123', password: 'test'})
+     props.signupAction({username: 'users/user', password: 'password'})
   };
 
   return (
