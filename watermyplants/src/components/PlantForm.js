@@ -1,7 +1,18 @@
 //Kate
-import React from "react";
+import React, {useState} from "react";
 
 const PlantForm = props => {
+  const [plant, setPlant] = useState({species: "",
+  name: "",
+  time: "28-08-2019 9:00:00",
+  location: ""})
+
+  const plantChangeHandler = e => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setPlant({...plant, [name]: value})
+  }
+
   return (
     <section>
       <h2>Add Plant</h2>
@@ -10,7 +21,10 @@ const PlantForm = props => {
           <input
             type="text"
             name="species"
+            onChange={plantChangeHandler}
+            value={plant.species}
             placeholder="Species of the plant"
+            required
           />
           <input
             type="text"
