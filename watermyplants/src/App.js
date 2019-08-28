@@ -23,12 +23,8 @@ function App() {
       <Nav />
       <Route path="/login" component={Login} />
       <Route path="/SignUp" render={props => <SignUp {...props} />} />
-      {/* <Login /> */}
-      {/* <RecoverPassword /> */}
-      {/* <ProfileSettings /> */}
-      {/* <FirstPlant /> */}
-      {/* <PlantForm /> */}
-      {/* <SignUp /> */}
+
+
       {/* Sends an array of objects as dunny data */}
       <Route path="/plant" component={PlantList} />
       {/* <PlantList array={PlantsDATA} /> */}
