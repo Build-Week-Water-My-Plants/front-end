@@ -1,8 +1,14 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import { loginAction } from "../actions";
 import { Form, Field, withFormik } from "formik";
 import * as Yup from "yup";
 
 const Login = props => {
+  const handleSubmit = e => {
+        e.preventDefault();
+        props.loginAction({ username: "admin", password: "password" });
+      };
   console.log("Formik Props: ", props);
   const { touched, errors } = props;
 
@@ -22,7 +28,7 @@ const Login = props => {
               <p className="error">{errors.password}</p>
             )}
           </div>
-          <button type="submit">Create Account</button>
+          <button onClick={(e) =>handleSubmit(e)}type="submit">Create Account</button>
         </div>
         <div className="sign-in">
           <div className="no-account">
@@ -49,7 +55,11 @@ const FormikLogin = withFormik({
   })
 })(Login);
 
-export default FormikLogin;
+
+export default connect(
+  null,
+  { loginAction }
+)(FormikLogin);
 
 // //Bri
 // import React from "react";
