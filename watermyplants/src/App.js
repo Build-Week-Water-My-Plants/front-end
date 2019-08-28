@@ -1,9 +1,10 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
+import { Route } from "react-router-dom";
 
-import { PlantContext } from './contexts/PlantContexts'
+import { PlantContext } from "./contexts/PlantContexts";
 
-import { plantsReducer } from './reducers/reducer'
+import { plantsReducer } from "./reducers/reducer";
 
 import Nav from "./components/Nav";
 import PlantForm from "./components/PlantForm";
@@ -20,17 +21,18 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <Login />
+      <Route path="/login" component={Login} />
+      <Route path="/SignUp" render={props => <SignUp {...props} />} />
+      {/* <Login /> */}
       {/* <RecoverPassword /> */}
-      <SignUp />
       {/* <ProfileSettings /> */}
       {/* <FirstPlant /> */}
       {/* <PlantForm /> */}
-
+      {/* <SignUp /> */}
       {/* Sends an array of objects as dunny data */}
-      <PlantList array={PlantsDATA} />
+      <Route path="/plant" component={PlantList} />
+      {/* <PlantList array={PlantsDATA} /> */}
     </div>
-
   );
 }
 
