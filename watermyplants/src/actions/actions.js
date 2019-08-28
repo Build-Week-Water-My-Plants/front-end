@@ -21,6 +21,18 @@ export const SIGNUP_START = "SIGNUP_START";
 export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
 export const SIGNUP_FAILED = "SIGNUP_FAILED";
 
+export const DELETEPLANT_START = "DELETEPLANT_START";
+export const DELETEPLANT_SUCCESS = "DELETEPLANT_SUCCESS";
+export const DELETEPLANT_FAIL = "DELETEPLANT_FAIL";
+
+export const DELETEUSER_START = "DELETEUSER_START";
+export const DELETEUSER_SUCCESS = "DELETEUSER_SUCCESS";
+export const DELETEUSER_FAIL = "DELETEUSER_FAIL";
+
+export const UPDATE_USER_START = "UPDATE_USER_START";
+export const UPDATE_USER_SUCCESS = "UPDATE_USER_SUCCESS";
+export const UPDATE_USER_FAIL = "UPDATE_USER_FAIL";
+
 ///login
 export const loginAction = user => {
   return dispatch => {
@@ -48,6 +60,74 @@ export const loginAction = user => {
   };
 };
 
+//signup
+export const signupAction = user => {
+  return dispatch => {
+    dispatch({ type: SIGNUP_START });
+    axios
+      .post("https://doc-watermyplants.herokuapp.com/createnewuser", user)
+      .then(res => {
+        console.log(res);
+        dispatch({ type: SIGNUP_SUCCESS });
+      })
+      .catch(err => {
+        console.log(err);
+        dispatch({ type: SIGNUP_FAILED });
+      });
+  };
+};
+
+//user
+export const userAction = userid => {
+  return dispatch => {
+    dispatch({ type: GETTING_USER });
+    axiosWithAuth()
+      .get(`https://doc-watermyplants.herokuapp.com/users/user/${userid}`)
+      .then(res => {
+        console.log(res);
+        dispatch({ type: GOT_USER });
+      })
+      .catch(err => {
+        console.log(err);
+        dispatch({ type: ERROR_GETTING_USER });
+      });
+  };
+};
+
+//update user
+export const updateUser = id => {
+  return dispatch => {
+    dispatch({ type: UPDATE_USER_START });
+    axiosWithAuth()
+      .put(`https://doc-watermyplants.herokuapp.com/users/user/${id}`)
+      .then(res => {
+        console.log(res);
+        dispatch({ type: UPDATE_USER_SUCCESS });
+      })
+      .catch(err => {
+        console.log(err);
+        dispatch({ type: UPDATE_USER_FAIL });
+      });
+  };
+};
+
+///delete user
+export const deleteUser = userid => {
+  return dispatch => {
+    dispatch({ type: DELETEUSER_START });
+    axiosWithAuth()
+      .delete(`https://doc-watermyplants.herokuapp.com/users/user/${userid}`)
+      .then(res => {
+        console.log(res);
+        dispatch({ type: DELETEUSER_SUCCESS });
+      })
+      .catch(err => {
+        console.log(err);
+        dispatch({ type: DELETEUSER_FAIL });
+      });
+  };
+};
+
 ///plants
 export const plantsAction = username => {
   return dispatch => {
@@ -67,27 +147,36 @@ export const plantsAction = username => {
   };
 };
 
-//plant
-export const plantAction = dispatch => {
-  dispatch({ type: GETTING_PLANT });
-};
-
-//signup
-export const signupAction = user => {
+///delete a plant
+export const deletePlant = id => {
   return dispatch => {
-    dispatch({ type: SIGNUP_START });
-    axios
-      .post("https://doc-watermyplants.herokuapp.com/createnewuser", user)
+    dispatch({ type: DELETEPLANT_START });
+    axiosWithAuth()
+      .delete(`https://doc-watermyplants.herokuapp.com/plants/plant/${id}`)
       .then(res => {
-        console.log("yay sign up worked", res);
+        console.log(res);
+        dispatch({ type: DELETEPLANT_SUCCESS });
       })
       .catch(err => {
-        console.log("Sign up didnt work", err);
+        console.log(err);
+        dispatch({ type: DELETEPLANT_FAIL });
       });
   };
 };
 
-//user
-export const userAction = dispatch => {
-  dispatch({ type: GETTING_USER });
+//plant
+export const plantAction = id => {
+  return dispatch => {
+    dispatch({ type: GETTING_PLANT });
+    axiosWithAuth()
+      .get(`https://doc-watermyplants.herokuapp.com/plants/plant/${id}`)
+      .then(res => {
+        console.log(res);
+        dispatch({ type: GOT_PLANT });
+      })
+      .catch(err => {
+        console.log(err);
+        dispatch({ type: ERROR_GETTING_PLANT });
+      });
+  };
 };
