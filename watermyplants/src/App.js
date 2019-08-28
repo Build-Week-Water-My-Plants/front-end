@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.scss";
 import { Route } from "react-router-dom";
+import { PrivateRoute } from "./utils/PrivateRoute";
 
 import { PlantContext } from "./contexts/PlantContexts";
 
@@ -21,7 +22,7 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <Route path="/login" component={Login} />
+      <Route path="/login" render={props => <Login {...props} />} />
       <Route path="/SignUp" render={props => <SignUp {...props} />} />
 
 
