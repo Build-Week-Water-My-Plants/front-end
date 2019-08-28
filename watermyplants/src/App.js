@@ -27,6 +27,7 @@ function App() {
       <Route path="/plantList" render={props => <PlantList {...props}/>} />
       <Route path="/firstPlant" render={props => <FirstPlant {...props}/>} />
       <Route path="/profile" render={props => <ProfileSettings {...props}/>} />
+      <Route path="/addplant" render={props => <PlantForm {...props} />} />
 
       {/* this page shouldn't be functional */}
       <Route path="/recoverPassword" render={props => <RecoverPassword {...props}/>} />

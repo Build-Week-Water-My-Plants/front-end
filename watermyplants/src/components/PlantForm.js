@@ -21,7 +21,7 @@ const PlantForm = props => {
             placeholder="Nickname of the plant"
           />
           {/* Days as buttons, perhaps?? */}
-          <div class="days-select">
+          {/* <div class="days-select">
             <img src="" alt="Some calendar pic" />
             <button class="calendar-day">
               <h4>M</h4>
@@ -44,13 +44,13 @@ const PlantForm = props => {
             <button class="calendar-day">
               <h4>Sun</h4>
             </button>
-          </div>
+          </div> */}
           {/* <div class="time-chosen">
             <input type="number" id="hour" name="hour" min="00" />
             <p>:</p>
             <input type="number" id="minute" name="minute" min="00" max="60" />
           </div> */}
-          <input type="text" name="time" placeholder="28-08-2019" />
+          <input type="text" name="time" placeholder="28-08-2019 9:00:00" />
           {/* <button class="am">am</button>
           <button class="pm">pm</button>
           <br /> */}
