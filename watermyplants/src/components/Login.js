@@ -1,21 +1,5 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-<<<<<<< HEAD
-import { loginAction, addPlant, plantsAction } from "../actions";
-// import img from "../../public/images/login.png";
-
-const Login = props => {
-  const handleSubmit = e => {
-    e.preventDefault();
-    props.loginAction({ username: "admin", password: "password" });
-    props.addPlant({species: 'testplant', name: 'test the plant', time: '28-08-2019 9:00:00', location: 'A house', user: {
-      userid: 4,
-      username: 'admin',
-      
-    }})
-    props.plantsAction('admin')
-  };
-=======
 import { loginAction } from "../actions";
 import { Form, Field, withFormik } from "formik";
 import * as Yup from "yup";
@@ -27,7 +11,6 @@ const Login = props => {
       };
   console.log("Formik Props: ", props);
   const { touched, errors } = props;
->>>>>>> e8732bc98b08c51752e531caea3adc1fdee88235
 
   return (
     <div className="login-form">
@@ -75,12 +58,7 @@ const FormikLogin = withFormik({
 
 export default connect(
   null,
-<<<<<<< HEAD
-  { loginAction, addPlant, plantsAction}
-)(Login);
-=======
   { loginAction }
 )(FormikLogin);
 
 // //Bri
->>>>>>> e8732bc98b08c51752e531caea3adc1fdee88235
