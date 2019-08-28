@@ -25,6 +25,14 @@ export const DELETEPLANT_START = "DELETEPLANT_START";
 export const DELETEPLANT_SUCCESS = "DELETEPLANT_SUCCESS";
 export const DELETEPLANT_FAIL = "DELETEPLANT_FAIL";
 
+export const UPDATE_PLANT_START = 'UPDATE_PLANT_START';
+export const UPDATE_PLANT_SUCCESS = 'UPDATE_PLANT_SUCCESS';
+export const UPDATE_PLANT_FAILED = 'UPDATE_PLANT_FAILED';
+
+export const ADD_PLANT_START = 'ADD_PLANT_START';
+export const ADD_PLANT_SUCCESS = 'ADD_PLANT_SUCCESS';
+export const ADD_PLANT_FAILED = 'ADD_PLANT_FAILED';
+
 export const DELETEUSER_START = "DELETEUSER_START";
 export const DELETEUSER_SUCCESS = "DELETEUSER_SUCCESS";
 export const DELETEUSER_FAIL = "DELETEUSER_FAIL";
@@ -85,11 +93,11 @@ export const userAction = userid => {
       .get(`https://doc-watermyplants.herokuapp.com/users/user/${userid}`)
       .then(res => {
         console.log(res);
-        dispatch({ type: GOT_USER });
+        dispatch({ type: GOT_USER, payload: res.data });
       })
       .catch(err => {
         console.log(err);
-        dispatch({ type: ERROR_GETTING_USER });
+        dispatch({ type: ERROR_GETTING_USER, payload: err });
       });
   };
 };
@@ -102,11 +110,11 @@ export const updateUser = id => {
       .put(`https://doc-watermyplants.herokuapp.com/users/user/${id}`)
       .then(res => {
         console.log(res);
-        dispatch({ type: UPDATE_USER_SUCCESS });
+        dispatch({ type: UPDATE_USER_SUCCESS, payload: res.data });
       })
       .catch(err => {
         console.log(err);
-        dispatch({ type: UPDATE_USER_FAIL });
+        dispatch({ type: UPDATE_USER_FAIL, payload: err });
       });
   };
 };
@@ -155,14 +163,46 @@ export const deletePlant = id => {
       .delete(`https://doc-watermyplants.herokuapp.com/plants/plant/${id}`)
       .then(res => {
         console.log(res);
-        dispatch({ type: DELETEPLANT_SUCCESS });
+        dispatch({ type: DELETEPLANT_SUCCESS, payload: res.data });
       })
       .catch(err => {
         console.log(err);
-        dispatch({ type: DELETEPLANT_FAIL });
+        dispatch({ type: DELETEPLANT_FAIL, payload: err });
       });
   };
 };
+
+//update a plant
+export const updatePlant = plant => {
+  return dispatch => {
+    dispatch({ type: UPDATE_PLANT_START });
+    axiosWithAuth()
+      .put(`https://doc-watermyplants.herokuapp.com/plants/plant/${plant.id}`, plant)
+      .then(res => {
+        console.log(res);
+        dispatch({ type: UPDATE_PLANT_SUCCESS, payload: res.data });
+      })
+      .catch(err => {
+        console.log(err);
+        dispatch({ type: UPDATE_PLANT_FAILED, payload: err });
+      });
+  };
+};
+
+//add plant
+export const addPlant = plant => {
+  return dispatch => {
+    dispatch({type: ADD_PLANT_START})
+    axiosWithAuth()
+      .post(`https://doc-watermyplants.herokuapp.com/plants/plant/`, plant)
+      .then(res => {
+        dispatch({type: ADD_PLANT_SUCCESS, payload: res.data})
+      })
+      .catch(err => {
+        dispatch({type: ADD_PLANT_FAILED, payload: err})
+      })
+  }
+}
 
 //plant
 export const plantAction = id => {
@@ -172,11 +212,11 @@ export const plantAction = id => {
       .get(`https://doc-watermyplants.herokuapp.com/plants/plant/${id}`)
       .then(res => {
         console.log(res);
-        dispatch({ type: GOT_PLANT });
+        dispatch({ type: GOT_PLANT, payload: res.data });
       })
       .catch(err => {
         console.log(err);
-        dispatch({ type: ERROR_GETTING_PLANT });
+        dispatch({ type: ERROR_GETTING_PLANT, payload: err });
       });
   };
 };
