@@ -167,6 +167,7 @@ export const plantAction = (id) => {
     dispatch({ type: GETTING_PLANT })
     axiosWithAuth()
     .get(`https://doc-watermyplants.herokuapp.com/plants/plant/${id}`)
+    console.log( plantAction)
     .then(res => {
         console.log(res)
         dispatch({ type: GOT_PLANT})

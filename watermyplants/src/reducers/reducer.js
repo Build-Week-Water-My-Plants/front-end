@@ -230,44 +230,10 @@ export const plantsReducer = (state = initialState, action) => {
                 plant: {
                     ...state.plants,
                     error: '',
-                    data: state.data.filter(plant => plant.id !== payload),
+                    data: state.data.filter(plant => plant.id !== action.payload),
                     isLoading: false,
                 }
             }
         ///update user, delete user needs added
     }
 }
-
-
-// //export const loginReducer = (state=initialState, { type, payload}) => {
-    // ERROR_GETTING_USER,
-    // GETTING_PLANT, GOT_PLANT,
-    // ERROR_GETTING_PLANT,
-    // GETTING_PLANTS,
-    // GOT_PLANTS,
-    // ERROR_GETTING_PLANTS,
-//     switch (type){
-//         case LOGIN_FAIL:
-//             return{
-//                 ...state,
-//                 isLoggingIn: false,
-//                 error: payload
-//             }
-//         case LOGIN_START:
-//             return {
-//                 ...state,
-//                 isLoggingIn: true,
-//                 error: false
-//             }
-//         case LOGIN_SUCCESS:
-//             return{
-//                 ...state,
-//                 isLoggingIn: false,
-//                 isLoggedIn: true,
-//                 token: localStorage.getItem('token'),
-//                 error: false
-//             }
-//         default:
-//             return state;
-//     }
-//  }
