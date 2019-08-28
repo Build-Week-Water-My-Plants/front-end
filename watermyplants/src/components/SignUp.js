@@ -5,6 +5,32 @@ import { Form, Field, withFormik } from "formik";
 import * as yup from "yup";
 
 const SignupComponent = props => {
+  const [login, setLogin] = useState({ user: "", phone: "", password: "" });
+
+  // /   function validatePassword() {
+  //     // If password.input === confirmPassword.input, then only set the finalized user
+  //   }
+
+  const changeHandler = e => {
+    console.log(e.target.value);
+    setLogin({ ...login, [e.target.name]: e.target.value });
+    console.log(login);
+  };
+  const submitForm = e => {
+    e.preventDefault();
+    // Calls validatePassword
+    const newLogin = {
+      ...login
+    };
+    props.addNewLogin(login);
+    setLogin({ user: "", password: "" });
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    props.signupAction({ username: "HiDoc", password: "test" });
+  };
+
   console.log("formik props", props);
   const { touched, errors } = props;
   return (

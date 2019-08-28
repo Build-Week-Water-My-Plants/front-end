@@ -1,7 +1,19 @@
 //Kate
-import React from "react";
+import React, {useState} from "react";
 
 const PlantForm = props => {
+  const [plant, setPlant] = useState({species: "",
+  name: "",
+  time: "28-08-2019 9:00:00",
+  location: ""})
+
+  const plantChangeHandler = e => {
+    console.log(e.target.value);
+    const name = e.target.name;
+    const value = e.target.value;
+    setPlant({...plant, [name]: value})
+  }
+
   return (
     <section>
       <h2>Add Plant</h2>
@@ -10,15 +22,19 @@ const PlantForm = props => {
           <input
             type="text"
             name="species"
+            onChange={plantChangeHandler}
+            value={plant.species}
             placeholder="Species of the plant"
           />
           <input
             type="text"
             name="nickname"
+            onChange={plantChangeHandler}
+            value={plant.name}
             placeholder="Nickname of the plant"
           />
           {/* Days as buttons, perhaps?? */}
-          <div class="days-select">
+          {/* <div class="days-select">
             <img src="" alt="Some calendar pic" />
             <button class="calendar-day">
               <h4>M</h4>
@@ -41,15 +57,29 @@ const PlantForm = props => {
             <button class="calendar-day">
               <h4>Sun</h4>
             </button>
-          </div>
-          <div class="time-chosen">
+          </div> */}
+          {/* <div class="time-chosen">
             <input type="number" id="hour" name="hour" min="00" />
             <p>:</p>
             <input type="number" id="minute" name="minute" min="00" max="60" />
-          </div>
-          <button class="am">am</button>
+          </div> */}
+          <input 
+            type="text" 
+            name="time" 
+            placeholder="28-08-2019 9:00:00"
+            onChange={plantChangeHandler}
+            value={plant.time}
+             />
+          {/* <button class="am">am</button>
           <button class="pm">pm</button>
-          <br />
+          <br /> */}
+          <input 
+            type="text" 
+            name="location" 
+            placeholder="Kitchen" 
+            onChange={plantChangeHandler}
+            value={plant.value}
+            />
           <button type="submit">Save plant</button>
         </div>
         <img src="" alt="Some img illustration" />
