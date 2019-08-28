@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import { Route, Link } f rom "react-router-dom";
 import { connect } from "react-redux";
-import { loginAction } from "../actions";
+import { loginAction} from "../actions";
 import { Form, Field, withFormik } from "formik";
 import * as Yup from "yup";
 
@@ -59,7 +59,7 @@ const FormikLogin = withFormik({
 
 export default connect(
   null,
-  { loginAction }
+  { loginAction}
 )(FormikLogin);
 
 // //Bri

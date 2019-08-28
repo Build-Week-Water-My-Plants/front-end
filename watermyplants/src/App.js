@@ -24,7 +24,7 @@ function App() {
 
       <Route exact path="/signup" render={props => <SignUp {...props} />} />
       <Route path="/login" render={props => <Login {...props} />} />
-      <PrivateRoute path="/plantList" render={props => <PlantList {...props}/>} />
+      <PrivateRoute path="/plantlist" render={props => <PlantList {...props}/>} />
       <PrivateRoute path="/firstPlant" render={props => <FirstPlant {...props}/>} />
       <PrivateRoute path="/profile" render={props => <ProfileSettings {...props}/>} />
       <PrivateRoute path="/addplant" render={props => <PlantForm {...props} />} />

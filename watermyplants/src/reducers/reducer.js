@@ -269,34 +269,34 @@ export const plantsReducer = (state = initialState, action) => {
                     error: action.payload,
                 }
             }
-        case DELETEPLANT_FAIL:
-            return {
-                ...state,
-                plants: {
-                    ...state.plants,
-                    isLoading: false,
-                    error: action.payload
-                }
-            }
-        case DELETEPLANT_START:
-            return {
-                ...state,
-                plants: {
-                    ...state.plants,
-                    isLoading: true,
-                    err: ''
-                }
-            }
-        case DELETEPLANT_SUCCESS:
-            return {
-                ...state,
-                plants: {
-                    ...state.plants,
-                    error: '',
-                    data: [...action.payload],
-                    isLoading: false,
-                }
-            }
+        // case DELETEPLANT_FAIL:
+        //     return {
+        //         ...state,
+        //         plants: {
+        //             ...state.plants,
+        //             isLoading: false,
+        //             error: action.payload
+        //         }
+        //     }
+        // case DELETEPLANT_START:
+        //     return {
+        //         ...state,
+        //         plants: {
+        //             ...state.plants,
+        //             isLoading: true,
+        //             err: ''
+        //         }
+        //     }
+        // case DELETEPLANT_SUCCESS:
+        //     return {
+        //         ...state,
+        //         plants: {
+        //             ...state.plants,
+        //             error: '',
+        //             data: [...action.payload],
+        //             isLoading: false,
+        //         }
+        //     }
 
         case UPDATE_USER_START:
             return {

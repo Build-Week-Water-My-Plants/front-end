@@ -89,22 +89,22 @@ export const signupAction = user => {
   };
 };
 
-//user
-export const userAction = userid => {
-  return dispatch => {
-    dispatch({ type: GETTING_USER });
-    axiosWithAuth()
-      .get(`https://doc-watermyplants.herokuapp.com/users/user/${userid}`)
-      .then(res => {
-        console.log(res);
-        dispatch({ type: GOT_USER, payload: res.data });
-      })
-      .catch(err => {
-        console.log(err);
-        dispatch({ type: ERROR_GETTING_USER, payload: err });
-      });
-  };
-};
+// //user
+// export const userAction = userid => {
+//   return dispatch => {
+//     dispatch({ type: GETTING_USER });
+//     axiosWithAuth()
+//       .get(`https://doc-watermyplants.herokuapp.com/users/user/${userid}`)
+//       .then(res => {
+//         console.log(res);
+//         dispatch({ type: GOT_USER, payload: res.data });
+//       })
+//       .catch(err => {
+//         console.log(err);
+//         dispatch({ type: ERROR_GETTING_USER, payload: err });
+//       });
+//   };
+// };
 
 //update user
 export const updateUser = id => {
@@ -123,22 +123,22 @@ export const updateUser = id => {
   };
 };
 
-///delete user
-export const deleteUser = userid => {
-  return dispatch => {
-    dispatch({ type: DELETEUSER_START });
-    axiosWithAuth()
-      .delete(`https://doc-watermyplants.herokuapp.com/users/user/${userid}`)
-      .then(res => {
-        console.log(res);
-        dispatch({ type: DELETEUSER_SUCCESS });
-      })
-      .catch(err => {
-        console.log(err);
-        dispatch({ type: DELETEUSER_FAIL });
-      });
-  };
-};
+// ///delete user
+// export const deleteUser = userid => {
+//   return dispatch => {
+//     dispatch({ type: DELETEUSER_START });
+//     axiosWithAuth()
+//       .delete(`https://doc-watermyplants.herokuapp.com/users/user/${userid}`)
+//       .then(res => {
+//         console.log(res);
+//         dispatch({ type: DELETEUSER_SUCCESS });
+//       })
+//       .catch(err => {
+//         console.log(err);
+//         dispatch({ type: DELETEUSER_FAIL });
+//       });
+//   };
+// };
 
 ///plants
 export const plantsAction = username => {
@@ -146,7 +146,7 @@ export const plantsAction = username => {
     dispatch({ type: GETTING_PLANTS });
     axiosWithAuth()
       .get(
-        `https://doc-watermyplants.herokuapp.com/plants/username/${username}`
+        `https://doc-watermyplants.herokuapp.com/plants/userName/${username}`
       )
       .then(res => {
         console.log(res);
