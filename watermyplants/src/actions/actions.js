@@ -146,7 +146,7 @@ export const plantsAction = username => {
     dispatch({ type: GETTING_PLANTS });
     axiosWithAuth()
       .get(
-        `https://doc-watermyplants.herokuapp.com/plants/userName/${username}`
+        `https://doc-watermyplants.herokuapp.com/plants/username/${username}`
       )
       .then(res => {
         console.log(res);
