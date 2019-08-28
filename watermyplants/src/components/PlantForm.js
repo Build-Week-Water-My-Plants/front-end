@@ -8,6 +8,7 @@ const PlantForm = props => {
   location: ""})
 
   const plantChangeHandler = e => {
+    console.log(e.target.value);
     const name = e.target.name;
     const value = e.target.value;
     setPlant({...plant, [name]: value})
@@ -29,7 +30,7 @@ const PlantForm = props => {
             type="text"
             name="nickname"
             onChange={plantChangeHandler}
-            value={plant.nickname}
+            value={plant.name}
             placeholder="Nickname of the plant"
           />
           {/* Days as buttons, perhaps?? */}
