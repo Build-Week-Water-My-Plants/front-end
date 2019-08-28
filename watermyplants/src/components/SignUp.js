@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { signupAction } from "../actions";
 import { Form, Field, withFormik } from "formik";
 import * as yup from "yup";
-//^^^Icon for errors
 
 const SignupComponent = props => {
   console.log("formik props", props);

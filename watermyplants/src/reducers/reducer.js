@@ -230,7 +230,7 @@ export const plantsReducer = (state = initialState, action) => {
                 plant: {
                     ...state.plants,
                     error: '',
-                    data: state.data.filter(plant => plant.id !== payload),
+                    data: state.data.filter(plant => plant.id !== action.payload),
                     isLoading: false,
                 }
             }
