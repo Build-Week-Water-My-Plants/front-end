@@ -1,17 +1,18 @@
 //Kate
-import React, { useState, useEffect } from "react";
-import array from "./PlantsDATA.js";
-
-//more input fields 
-//local state
+import React, {useState} from "react";
 
 const PlantForm = props => {
-  console.log("These are props: ",props);
-  console.log("This is the array ", props.array)
-  const [plants, setPlants] = useState([]);
-  // useEffect(() => {
-    
-  // }, []);
+  const [plant, setPlant] = useState({species: "",
+  name: "",
+  time: "28-08-2019 9:00:00",
+  location: ""})
+
+  const plantChangeHandler = e => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setPlant({...plant, [name]: value})
+  }
+
   return (
     <section>
       <h2>Add Plant</h2>
@@ -20,11 +21,15 @@ const PlantForm = props => {
           <input
             type="text"
             name="species"
+            onChange={plantChangeHandler}
+            value={plant.species}
             placeholder="Species of the plant"
           />
           <input
             type="text"
             name="nickname"
+            onChange={plantChangeHandler}
+            value={plant.nickname}
             placeholder="Nickname of the plant"
           />
           {/* Days as buttons, perhaps?? */}
@@ -57,11 +62,23 @@ const PlantForm = props => {
             <p>:</p>
             <input type="number" id="minute" name="minute" min="00" max="60" />
           </div> */}
-          <input type="text" name="time" placeholder="28-08-2019 9:00:00" />
+          <input 
+            type="text" 
+            name="time" 
+            placeholder="28-08-2019 9:00:00"
+            onChange={plantChangeHandler}
+            value={plant.time}
+             />
           {/* <button class="am">am</button>
           <button class="pm">pm</button>
           <br /> */}
-          <input type="text" name="location" placeholder="Kitchen" />
+          <input 
+            type="text" 
+            name="location" 
+            placeholder="Kitchen" 
+            onChange={plantChangeHandler}
+            value={plant.value}
+            />
           <button type="submit">Save plant</button>
         </div>
         <img src="" alt="Some img illustration" />
