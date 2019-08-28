@@ -16,6 +16,7 @@ import FirstPlant from "./components/FirstPlant.js";
 import RecoverPassword from "./components/RecoverPassword.js";
 import PlantsDATA from "./components/PlantsDATA";
 import PlantList from "./components/PlantList";
+import UpdatePlant from "./components/UpdatePlant";
 
 function App() {
   return (
@@ -24,17 +25,20 @@ function App() {
 
       <Route exact path="/" render={props => <SignUp {...props} />} />
       <Route path="/login" render={props => <Login {...props} />} />
-      <Route path="/plantList" render={props => <PlantList {...props}/>} />
+
+  <Route path="/plantList" render={props => <PlantList {...props} array={PlantsDATA}/> } />
+      
       <Route path="/firstPlant" render={props => <FirstPlant {...props}/>} />
       <Route path="/profile" render={props => <ProfileSettings {...props}/>} />
       <Route path="/addplant" render={props => <PlantForm {...props} />} />
-
+      <Route path="/updateplant" render={props => <UpdatePlant {...props} />} />
       {/* this page shouldn't be functional */}
       <Route path="/recoverPassword" render={props => <RecoverPassword {...props}/>} />
 
-      {/* Sends an array of objects as dunny data */}
-      <Route path="/plant" component={PlantList} />
-      {/* <PlantList array={PlantsDATA} /> */}
+      {/* {
+        (PlantsDATA !== null) ? ( <PlantList array={PlantsDATA} />) : false
+      } */}
+       {/* <PlantList array={PlantsDATA} /> */}
     </div>
   );
 }

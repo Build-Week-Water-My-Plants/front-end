@@ -11,17 +11,17 @@ function Nav(props) {
       </NavLink>
       <ul className="nav-links" id="nav-links">
         <li>
-          <NavLink to="/" activeClassName="activeNavButton">
+          <NavLink to="/plantList" activeClassName="activeNavButton">
             Plants
           </NavLink>
         </li>
         <li>
-          <NavLink to="/" activeClassName="activeNavButton">
+          <NavLink to="/profile" activeClassName="activeNavButton">
             Profile
           </NavLink>
         </li>
         <li>
-          <NavLink to="/" activeClassName="activeNavButton">
+          <NavLink to="/login" activeClassName="activeNavButton">
             Sign Out
           </NavLink>
         </li>
