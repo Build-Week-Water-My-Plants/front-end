@@ -1,16 +1,47 @@
 .signup-form {
   margin-top: 10%;
+  height: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid pink;
+  //   border: 1px solid pink;
 
-  form {
+  .signup-display {
+    // border: solid 1px purple;
     display: flex;
-    flex-direction: column;
+    width: 80%;
+    height: 60%;
+  }
+
+  .form-body {
+    // border: 1px solid green;
     width: 40%;
-    input {
-      margin: 10px 0;
+    text-align: center;
+    background-color: #1a3541;
+    color: white;
+    height: 420px;
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      input {
+        margin: 8px 0;
+        width: 55%;
+      }
+
+      p {
+        color: red;
+      }
     }
+  }
+
+  .sign-img {
+    // border: 1px solid blue;
+    width: 50%;
+  }
+
+  h1 {
+    color: #d1298c;
   }
 }

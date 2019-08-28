@@ -23,7 +23,7 @@ function App() {
     <div className="App">
       <Nav />
 
-      <Route exact path="/" render={props => <SignUp {...props} />} />
+      <Route exact path="/signup" render={props => <SignUp {...props} />} />
       <Route path="/login" render={props => <Login {...props} />} />
 
   <Route path="/plantList" render={props => <PlantList {...props} array={PlantsDATA}/> } />
@@ -32,13 +32,21 @@ function App() {
       <Route path="/profile" render={props => <ProfileSettings {...props}/>} />
       <Route path="/addplant" render={props => <PlantForm {...props} />} />
       <Route path="/updateplant" render={props => <UpdatePlant {...props} />} />
+      <PrivateRoute path="/plantList" render={props => <PlantList {...props}/>} />
+      <PrivateRoute path="/firstPlant" render={props => <FirstPlant {...props}/>} />
+      <PrivateRoute path="/profile" render={props => <ProfileSettings {...props}/>} />
+      <PrivateRoute path="/addplant" render={props => <PlantForm {...props} />} />
+
       {/* this page shouldn't be functional */}
-      <Route path="/recoverPassword" render={props => <RecoverPassword {...props}/>} />
+      <PrivateRoute path="/recoverPassword" render={props => <RecoverPassword {...props}/>} />
 
       {/* {
         (PlantsDATA !== null) ? ( <PlantList array={PlantsDATA} />) : false
       } */}
        {/* <PlantList array={PlantsDATA} /> */}
+      {/* Sends an array of objects as dunny data */}
+      <PrivateRoute path="/plant" component={PlantList} />
+      {/* <PlantList array={PlantsDATA} /> */}
     </div>
   );
 }
