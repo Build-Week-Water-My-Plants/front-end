@@ -1,8 +1,8 @@
 //Bri
 import React, { useState } from "react";
 import axios from "axios";
-import {connect} from 'react-redux';
-import {signupAction} from '../actions';
+import { connect } from "react-redux";
+import { signupAction } from "../actions";
 //^^^Icon for errors
 
 const SignUp = props => {
@@ -23,13 +23,13 @@ const SignUp = props => {
     const newLogin = {
       ...login
     };
-    props.addNewLogin(newLogin);
+    props.addNewLogin(login);
     setLogin({ user: "", password: "" });
   };
 
   const handleSubmit = e => {
-     e.preventDefault();
-     props.signupAction({username: 'testing123', password: 'test'})
+    e.preventDefault();
+    props.signupAction({ username: "HiDoc", password: "test" });
   };
 
   return (
@@ -38,16 +38,8 @@ const SignUp = props => {
       <form onSubmit={handleSubmit}>
         <h2>Let's Get Started!</h2>
         <div>
-          <input 
-            type="tel" 
-            name="phonenumber" 
-            placeholder="Phone Number" 
-            />
-          <input 
-            type="password" 
-            name="password" 
-            placeholder="Password" 
-            />
+          <input type="tel" name="phonenumber" placeholder="Phone Number" />
+          <input type="password" name="password" placeholder="Password" />
           <input
             type="password"
             name="password"
@@ -55,19 +47,20 @@ const SignUp = props => {
             onChange={changeHandler}
           />
           />
-          <button type="submit" onSubmit={submitForm}>
+          <button type="submit" onSubmit={handleSubmit}>
             Start Watering
           </button>
           <p>
             Have an account? <a href="#">Sign In</a>
           </p>
         </div>
-        <img
-          alt="Cartoon women with long hair on a computer in front of window."
-        />
+        <img alt="Cartoon women with long hair on a computer in front of window." />
       </form>
     </section>
   );
 };
 
-export default connect(null, {signupAction})(SignUp);
+export default connect(
+  null,
+  { signupAction }
+)(SignUp);

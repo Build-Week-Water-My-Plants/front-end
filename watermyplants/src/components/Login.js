@@ -1,29 +1,15 @@
 //Bri
 import React from "react";
-<<<<<<< HEAD
 import axios from "axios";
-import { connect } from "react";
+import { connect } from "react-redux";
 import { loginAction } from "../actions";
-=======
-import axios from 'axios'
-import { connect } from 'react-redux'
-import {loginAction} from '../actions';
->>>>>>> 7142830eddf8bf6b304d42201492726c4b424569
 // import img from "../../public/images/login.png";
 
 const Login = props => {
   const handleSubmit = e => {
-<<<<<<< HEAD
     e.preventDefault();
     props.loginAction({ username: "admin", password: "password" });
   };
-=======
-    e.preventDefault()
-    props.loginAction({username: 'admin', password: 'password'})
-  }
-
-
->>>>>>> 7142830eddf8bf6b304d42201492726c4b424569
 
   return (
     <section>
@@ -53,15 +39,7 @@ const Login = props => {
   );
 };
 
-<<<<<<< HEAD
-mapStateToProps = state => {
-  return null;
-};
 export default connect(
-  mapStateToProps,
+  null,
   { loginAction }
-=======
-
-export default connect(null, {loginAction}
->>>>>>> 7142830eddf8bf6b304d42201492726c4b424569
 )(Login);
