@@ -1,19 +1,15 @@
 //Bri
 import React from "react";
-import axios from 'axios'
-import { connect } from 'react-redux'
-import {loginAction} from '../actions';
+import axios from "axios";
+import { connect } from "react-redux";
+import { loginAction } from "../actions";
 // import img from "../../public/images/login.png";
 
-
 const Login = props => {
-
   const handleSubmit = e => {
-    e.preventDefault()
-    props.loginAction({username: 'admin', password: 'password'})
-  }
-
-
+    e.preventDefault();
+    props.loginAction({ username: "admin", password: "password" });
+  };
 
   return (
     <section>
@@ -27,11 +23,7 @@ const Login = props => {
             placeholder="Username or Phone Number"
           />
           {/* ^^^ will this be for both? On the design doc it's suppose to be this way but we can just do username */}
-          <input 
-            type="password" 
-            name="password" 
-            placeholder="Password" 
-            />
+          <input type="password" name="password" placeholder="Password" />
           <a href="#">Forgot your password?</a>
           <button type="submit">Sign In</button>
           <p>
@@ -47,6 +39,7 @@ const Login = props => {
   );
 };
 
-
-export default connect(null, {loginAction}
+export default connect(
+  null,
+  { loginAction }
 )(Login);
