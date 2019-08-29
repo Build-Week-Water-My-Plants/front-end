@@ -14,7 +14,6 @@ const SignupComponent = props => {
     <>
       <NavLogin />
       <div className="signup-form">
-        <h1>testing</h1>
         <section>
           <h1>Water my Plants</h1>
         </section>
