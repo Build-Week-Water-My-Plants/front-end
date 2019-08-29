@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 // import { Route, Link } f rom "react-router-dom";
 import { connect } from "react-redux";
 import { loginAction } from "../actions";
@@ -52,7 +52,7 @@ const Login = props => {
               </a>
             </div>
           </Form>
-          <img src="images/login.png" />
+          <img src="images/login.png" alt="Cartoon woman in overalls holding key to unlock phone" />
         </div>
       </div>
     </>

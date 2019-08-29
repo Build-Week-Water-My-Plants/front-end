@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Nav from "./Nav";
 import "../sass/form.scss";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { addPlant } from "../actions";
 
 const PlantForm = props => {
   const [plant, setPlant] = useState({
@@ -22,7 +24,7 @@ const PlantForm = props => {
   const submitForm = e => {
     e.preventDefault();
     console.log(plant);
-    props.addNewPlant(...plant);
+    props.addPlant(plant);
     setPlant({
       species: "",
       name: "",
@@ -82,4 +84,7 @@ const PlantForm = props => {
   );
 };
 
-export default PlantForm;
+export default connect(
+  null,
+  { addPlant }
+)(PlantForm);
