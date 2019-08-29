@@ -25,21 +25,21 @@ function App() {
       />
       <PrivateRoute
         path="/firstPlant"
-        component={props => <FirstPlant {...props} />}
+        component={FirstPlant}
       />
       <PrivateRoute
         path="/profile"
-        component={props => <ProfileSettings {...props} />}
+        component={ProfileSettings}
       />
       <PrivateRoute
         path="/addplant"
-        component={props => <PlantForm {...props} />}
+        component={PlantForm}
       />
 
       {/* this page shouldn't be functional */}
       <Route
         path="/recoverPassword"
-        component={props => <RecoverPassword {...props} />}
+        component={RecoverPassword>}
       />
 
       {/* Sends an array of objects as dunny data */}
