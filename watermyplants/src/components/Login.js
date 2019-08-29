@@ -59,7 +59,7 @@ const FormikLogin = withFormik({
 
 export default connect(
   null,
-  { loginAction}
+  { loginAction }
 )(FormikLogin);
 
 // //Bri
