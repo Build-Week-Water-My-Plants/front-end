@@ -45,8 +45,8 @@ const SignupComponent = props => {
             )}
             <button type="submit">Start Watering</button>
             <div className="sign-in">
-              <p>Don't have an account?</p>
-            <a href="#">Sign Up</a>
+              <p>Have an account?</p>
+            <a href="/login">Sign In</a>
           </div>
           </Form>
         </div>

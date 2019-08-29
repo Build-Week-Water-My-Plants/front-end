@@ -44,7 +44,7 @@ function App() {
       />
 
       {/* this page shouldn't be functional */}
-      <PrivateRoute
+      <Route
         path="/recoverPassword"
         render={props => <RecoverPassword {...props} />}
       />
