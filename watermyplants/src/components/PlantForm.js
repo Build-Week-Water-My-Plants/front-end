@@ -1,7 +1,7 @@
 //Kate
 import React, {useState} from "react";
-import {connect} from 'react-redux'
-import { addPlant } from '../actions/actions'
+import { connect } from 'react-redux';
+import { addPlant } from '../actions';
 
 const PlantForm = props => {
   const [plant, setPlant] = useState({species: "",
@@ -70,11 +70,4 @@ const PlantForm = props => {
   );
 };
 
-const mapStateToProps = state => {
-  console.log("state", state, '2');
-  return {
-    user: state.user,
-  };
-};
-
-export default connect (mapStateToProps,{addPlant} )(PlantForm);
+export default connect(null, {addPlant})(PlantForm);

@@ -66,7 +66,15 @@ export const loginAction = (user, history) => {
             .then(res => {
               console.log(res)
               dispatch({type: GOT_USER, payload: res.data})
-              history.push('/plantList')})
+              dispatch({type: GETTING_PLANTS})
+              axiosWithAuth()
+                .get(`https://doc-watermyplants.herokuapp.com/plants/userName/${res.data.username}`)
+                .then(res => {
+                  dispatch({type: GOT_PLANTS, payload: res.data})
+                  history.push('/plantList')})
+                })
+                .catch(err => dispatch({type: ERROR_GETTING_PLANTS, payload: err}))
+           
              
             .catch(err => {
               console.log(err.response)

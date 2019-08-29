@@ -64,7 +64,7 @@ const SignupComponent = props => {
             </Form>
           </div>
           <div className="sign-img">
-            <img src="images/signUp.png" alt='img-signup' />
+            <img src="images/signUp.png" alt="cartoon woman sitting with her laptop in front of a large window." />
           </div>
         </section>
       </div>
@@ -94,7 +94,7 @@ const SignUp = withFormik({
     verifyp: yup
       .string()
       .min(4, "Password must be at least 4 characters long")
-      .required("Please retype your password")
+      .required("Confirm password")
   }),
   handleSubmit: (values, { resetForm, props, setErrors }) => {
     console.log("values", props);

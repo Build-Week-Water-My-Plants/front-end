@@ -52,7 +52,7 @@ const Login = props => {
               </a>
             </div>
           </Form>
-          <img src="images/login.png" alt='login-img' />
+          <img src="images/login.png" alt="Cartoon woman in overalls holding key to unlock phone" />
         </div>
       </div>
     </>
