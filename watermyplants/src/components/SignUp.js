@@ -9,7 +9,7 @@ import NavLogin from "./NavLogin";
 import "../sass/SignUp.scss";
 const SignupComponent = props => {
   // console.log("formik props", props);
-  // const { touched, errors } = props;
+   const { touched, errors } = props;
   return (
     <>
       <NavLogin />
