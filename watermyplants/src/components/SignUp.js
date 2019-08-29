@@ -26,11 +26,21 @@ const SignupComponent = props => {
             {touched.phonenumber && errors.phonenumber && (
               <p className="form-error">{errors.phonenumber}</p>
             )}
-            <Field type="text" name="username" placeholder="username" className="field" />
+            <Field
+              type="text"
+              name="username"
+              placeholder="username"
+              className="field"
+            />
             {touched.username && errors.username && (
               <p className="form-error">{errors.username}</p>
             )}
-            <Field type="password" name="password" placeholder="password" className="field" />
+            <Field
+              type="password"
+              name="password"
+              placeholder="password"
+              className="field"
+            />
             {touched.password && errors.password && (
               <p className="form-error">{errors.password}</p>
             )}
@@ -48,10 +58,13 @@ const SignupComponent = props => {
               <p>Have an account?</p>
             <a href="/login">Sign In</a>
           </div>
+              <p>Don't have an account?</p>
+              <a href="#">Sign Up</a>
+            </div>
           </Form>
         </div>
         <div className="sign-img">
-          <img src="images/signUp.png"/>
+          <img src="images/signUp.png" />
         </div>
       </section>
     </div>
@@ -70,7 +83,7 @@ const SignUp = withFormik({
   validationSchema: yup.object().shape({
     phonenumber: yup
       .string()
-      .matches(/^[2-9]\d{2}-\d{3}-\d{4}$/, "phone number is not valid")
+      .matches(/^[2-9]\d{2}-\d{3}-\d{4}$/, "please use XXX-XXX-XXX format")
       .required("phone number is required"),
     username: yup.string().required("username is required"),
     password: yup
