@@ -21,30 +21,32 @@ import UpdatePlant from "./components/UpdatePlant";
 function App() {
   return (
     <div className="App">
-      <Route exact path="/" render={props => <SignUp {...props} />} />
-      <Route path="/login" render={props => <Login {...props} />} />
+      <Nav />
+
+      <Route exact path="/signup" component={props => <SignUp {...props} />} />
+      <Route path="/login" component={props => <Login {...props} />} />
 
       <PrivateRoute
         path="/plantList"
-        render={props => <PlantList {...props} />}
+        component={props => <PlantList {...props} />}
       />
       <PrivateRoute
         path="/firstPlant"
-        render={props => <FirstPlant {...props} />}
+        component={props => <FirstPlant {...props} />}
       />
       <PrivateRoute
         path="/profile"
-        render={props => <ProfileSettings {...props} />}
+        component={props => <ProfileSettings {...props} />}
       />
       <PrivateRoute
         path="/addplant"
-        render={props => <PlantForm {...props} />}
+        component={props => <PlantForm {...props} />}
       />
 
       {/* this page shouldn't be functional */}
       <Route
         path="/recoverPassword"
-        render={props => <RecoverPassword {...props} />}
+        component={props => <RecoverPassword {...props} />}
       />
 
       {/* Sends an array of objects as dunny data */}
