@@ -95,7 +95,7 @@ const SignUp = withFormik({
     verifyp: yup
       .string()
       .min(4, "Password must be at least 4 characters long")
-      .required("Please retype your password")
+      .required("Confirm password")
   }),
   handleSubmit: (values, { resetForm, props, setErrors }) => {
     console.log("values", props);

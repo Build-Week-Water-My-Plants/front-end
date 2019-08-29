@@ -51,7 +51,7 @@ const ProfileSettings = props => {
             />
           <button type="submit" className="edit">edit</button>
           </div>
-          <img src="images/profileSettings.png" alt="hold" />
+          <img src="images/profileSettings.png" alt="persons hands holding some kind of plant in soil." />
           {/* quote goes above this img-- 
         "Where flowers bloom so does hope." - Lady Bird Johnson */}
         </form>

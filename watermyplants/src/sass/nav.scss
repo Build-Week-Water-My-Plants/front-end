@@ -35,7 +35,7 @@ nav {
     font-size: 1.7em;
     text-decoration: none;
     text-align: center;
-    font-family: "Dancing Script", cursive;
+    font-family: $signika;
     padding-left: 0.5em;
     text-decoration: none;
   }
@@ -51,7 +51,7 @@ nav {
   li a {
     text-decoration: none;
     color: white;
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: $signika;
     font-size: 1em;
     text-transform: lowercase;
     letter-spacing: 0.2em;
