@@ -11,7 +11,7 @@ const Login = props => {
     e.preventDefault();
     props.loginAction({ username: "admin", password: "password" });
   };
-  console.log("Formik Props: ", props);
+  // console.log("Formik Props: ", props);
   const { touched, errors } = props;
 
   return (
