@@ -11,9 +11,8 @@ const PlantList = props => {
   const [plantList, setPlantList] = useState([...props.plants.data]);
   console.log(plantList)
   useEffect(() => {
-    props.plantsAction(props.user.username)
-    setPlantList([...props.plants.data])
-  },[props.plants.data])
+   
+  },[])
   return (
     <>
       <Nav />
