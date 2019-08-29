@@ -26,12 +26,6 @@ function App() {
       <Route exact path="/signup" render={props => <SignUp {...props} />} />
       <Route path="/login" render={props => <Login {...props} />} />
 
-  <Route path="/plantList" render={props => <PlantList {...props} array={PlantsDATA}/> } />
-      
-      <Route path="/firstPlant" render={props => <FirstPlant {...props}/>} />
-      <Route path="/profile" render={props => <ProfileSettings {...props}/>} />
-      <Route path="/addplant" render={props => <PlantForm {...props} />} />
-      <Route path="/updateplant" render={props => <UpdatePlant {...props} />} />
       <PrivateRoute path="/plantList" render={props => <PlantList {...props}/>} />
       <PrivateRoute path="/firstPlant" render={props => <FirstPlant {...props}/>} />
       <PrivateRoute path="/profile" render={props => <ProfileSettings {...props}/>} />
@@ -40,10 +34,6 @@ function App() {
       {/* this page shouldn't be functional */}
       <PrivateRoute path="/recoverPassword" render={props => <RecoverPassword {...props}/>} />
 
-      {/* {
-        (PlantsDATA !== null) ? ( <PlantList array={PlantsDATA} />) : false
-      } */}
-       {/* <PlantList array={PlantsDATA} /> */}
       {/* Sends an array of objects as dunny data */}
       <PrivateRoute path="/plant" component={PlantList} />
       {/* <PlantList array={PlantsDATA} /> */}
