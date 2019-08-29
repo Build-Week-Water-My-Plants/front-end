@@ -2,11 +2,6 @@ import React from "react";
 import "./App.scss";
 import { Route } from "react-router-dom";
 import PrivateRoute from "./utils/PrivateRoute";
-
-import { PlantContext } from "./contexts/PlantContexts";
-
-import { plantsReducer } from "./reducers/reducer";
-
 import Nav from "./components/Nav";
 import PlantForm from "./components/PlantForm";
 import Login from "./components/Login.js";
@@ -28,7 +23,7 @@ function App() {
 
       <PrivateRoute
         path="/plantList"
-        component={props => <PlantList {...props} />}
+        component={PlantList}
       />
       <PrivateRoute
         path="/firstPlant"
