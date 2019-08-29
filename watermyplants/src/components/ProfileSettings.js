@@ -27,6 +27,7 @@ const ProfileSettings = props => {
       <Nav />
       <section className="profile">
         <h2>Profile Information</h2>
+        <hr/>
         <form onSubmit={submitForm}>
           <div className="username">
           <label>Username</label>

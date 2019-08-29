@@ -11,8 +11,11 @@
         text-decoration-color: $med-blue;
         margin-left: 112px;
     }
+    hr{
+        margin-top: -24px;
+    }
     form{
-        @include display-flex();
+        @include display-flex($jC: space-evenly);
         .username, .phonenumber{
             background: $light-blue;
             border-radius: 20px;
@@ -20,15 +23,27 @@
             height: 95px;
             @include display-flex();
             color: $dark-blue;
+            font-size: 22px;
         }
         input{
             border: 0px solid $light-blue;
             background: $light-blue;
+            margin-left: 10px;
+            font-size: 22px;
+            width: 140px;
+            height: 30px;
+        }
+        label{
+            font-weight: 600;
         }
 
     }
     button.edit{
         border: 0px solid $dark-blue;
-
+        font-size: 22px;
+        margin: 0% auto;
+        background: $light-blue;
+        text-decoration: underline;
+        text-decoration-color: $dark-blue;
     }
 }
