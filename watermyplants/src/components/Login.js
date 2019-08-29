@@ -8,7 +8,6 @@ import NavLogin from "./NavLogin";
 
 import "../sass/Login.scss";
 const Login = props => {
-  console.log("Formik Props: ", props);
   const { touched, errors } = props;
 
   return (
@@ -72,17 +71,15 @@ const FormikLogin = withFormik({
     password: Yup.string().required("Password is required")
   }),
   handleSubmit: (values, { resetForm, props, setErrors }) => {
-    console.log("values", props);
     const { loginAction, history } = props;
     const user = {
       // phonenumber: values.phonenumber,
       username: values.username,
       password: values.password
     };
-    console.log("submitHandled");
-    loginAction(user);
+
+    loginAction(user, props.history);
     resetForm();
-    props.history.push("/plantList");
   }
 })(Login);
 

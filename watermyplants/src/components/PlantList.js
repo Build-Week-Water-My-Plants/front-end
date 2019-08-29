@@ -6,10 +6,12 @@ import { connect } from "react-redux";
 import Nav from "./Nav";
 import { plantsAction } from "../actions";
 
-const PlantList = props => {
-  const [plantList, setPlantList] = useState([...props.plants.data]);
-  console.log(plantList);
-  useEffect(() => {}, []);
+const PlantList = (props) => {
+  const [plantList, setPlantList] = useState([...props.user.plants]);
+  console.log(props.user.plants, 'plantlist' , '1');
+ useEffect(() => {
+  // setPlantList(props.user.plants)
+ },[])
   return (
     <>
       <Nav />
@@ -17,14 +19,15 @@ const PlantList = props => {
         <div className="plant-summary-component">
           {plantList.map(plants => {
             return (
-              console.log(plants),
               (
+                <div>
                 <PlantCard
                   key={plants.id}
                   id={plants.id}
                   name={plants.name}
                   species={plants.species}
                 />
+                </div>
               )
             );
           })}
@@ -39,10 +42,9 @@ const PlantList = props => {
 };
 
 const mapStateToProps = state => {
-  console.log("state", state.user);
+  console.log("state", state, '2');
   return {
     user: state.user,
-    plants: state.plants
   };
 };
 export default connect(
