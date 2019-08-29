@@ -28,6 +28,7 @@ const ProfileSettings = props => {
       <section className="profile">
         <h2>Profile Information</h2>
         <form onSubmit={submitForm}>
+          <div className="username">
           <label>Username</label>
           <input 
             type="text" 
@@ -36,7 +37,9 @@ const ProfileSettings = props => {
             value={user.username} 
             placeholder="Example"
              />
-          <button type="submit">edit</button>
+          <button type="submit" className="edit">edit</button>
+          </div>
+          <div className="phonenumber">
           <label>Phone</label>
           <input 
             type="tel" 
@@ -45,7 +48,8 @@ const ProfileSettings = props => {
             value={user.phonenumber}  
             placeholder="000-000-0000" 
             />
-          <button type="submit">edit</button>
+          <button type="submit" className="edit">edit</button>
+          </div>
           <img src="images/profileSettings.png" alt="hold" />
           {/* quote goes above this img-- 
         "Where flowers bloom so does hope." - Lady Bird Johnson */}

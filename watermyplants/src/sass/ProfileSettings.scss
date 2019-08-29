@@ -6,4 +6,29 @@
     background: $dark-blue;
     color: white;
     font-family: $signika;
+    h2{
+        text-decoration: underline;
+        text-decoration-color: $med-blue;
+        margin-left: 112px;
+    }
+    form{
+        @include display-flex();
+        .username, .phonenumber{
+            background: $light-blue;
+            border-radius: 20px;
+            width: 375px;
+            height: 95px;
+            @include display-flex();
+            color: $dark-blue;
+        }
+        input{
+            border: 0px solid $light-blue;
+            background: $light-blue;
+        }
+
+    }
+    button.edit{
+        border: 0px solid $dark-blue;
+
+    }
 }
