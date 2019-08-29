@@ -13,20 +13,21 @@
     .form-body{
       background: $dark-blue;
       width: 360px;
-      height: 430px;
+      height: 606px;
       border-radius: 20px;
       box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
       h3{
         color: white;
         text-align: center;
         font-size: 36px;
-        margin: 10%;
+        margin-top: 9px;
       }
       .form{
         @include display-flex();
         flex-direction: column;
+        margin-top: 60px;
         .field{
-          margin: 0% auto;
+          margin-top: 15px;
           background: white;
           width: 260px;
           height: 50px;
@@ -36,6 +37,7 @@
       }
     }
   }
+}
   button{
     background: #ffffff;
     width: 166px;
@@ -44,7 +46,21 @@
     border-radius: 9px;
     color: $dark-pink;
     font-size: 22px;
+    margin-top: 68px;
+    margin-bottom: 24px;
   }
+  .sign-in{
+    width: 64%;
+    @include display-flex($jC: space-around);
+    font-size: 14;
+    color: #ffffff;
+    a{
+        text-decoration: none;
+        color: #ffffff;
+        &:hover{
+            color: $light-blue;
+        }
+    }
 }
 
 

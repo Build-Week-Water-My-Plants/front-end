@@ -15,7 +15,7 @@ const SignupComponent = props => {
       </section>
       <section className="signup-display">
         <div className="form-body">
-          <h3>Let's get started</h3>
+          <h3>Let's get started!</h3>
           <Form className="form">
             <Field
               type="text"
@@ -44,6 +44,10 @@ const SignupComponent = props => {
               <p className="form-error">{errors.verifyp}</p>
             )}
             <button type="submit">Start Watering</button>
+            <div className="sign-in">
+              <p>Don't have an account?</p>
+            <a href="#">Sign Up</a>
+          </div>
           </Form>
         </div>
         <div className="sign-img">
