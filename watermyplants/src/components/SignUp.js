@@ -4,6 +4,7 @@ import { signupAction } from "../actions";
 import { Form, Field, withFormik } from "formik";
 import * as yup from "yup";
 
+import "../sass/SignUp.scss";
 const SignupComponent = props => {
   const [login, setLogin] = useState({ user: "", phone: "", password: "" });
 
