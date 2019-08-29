@@ -30,6 +30,10 @@ function App() {
         component={props => <PlantList {...props} array={PlantsDATA} />}
       />
       <PrivateRoute
+        path="/plantform"
+        component={props => <PlantForm {...props} />}
+      />
+      <PrivateRoute
         path="/firstPlant"
         component={props => <FirstPlant {...props} />}
       />
