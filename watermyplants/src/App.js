@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       <Nav />
 
-      <Route path="/signup" component={SignUp} />
+      <Route path="/signup" component={Login} />
       <Route path="/" component={Login} />
 
       <PrivateRoute
