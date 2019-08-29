@@ -5,7 +5,6 @@ import PlantCard from "./PlantCard.js";
 import { connect } from "react-redux";
 import Nav from "./Nav";
 import { plantsAction } from "../actions";
-import { Link } from 'react-router-dom';
 
 const PlantList = (props) => {
   const [plantList, setPlantList] = useState([...props.plants.data]);
