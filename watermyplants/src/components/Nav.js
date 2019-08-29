@@ -21,7 +21,7 @@ function Nav(props) {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/login" activeClassName="activeNavButton">
+          <NavLink  to="/login" activeClassName="activeNavButton">
             Sign Out
           </NavLink>
         </li>
