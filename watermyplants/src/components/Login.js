@@ -71,16 +71,14 @@ const FormikLogin = withFormik({
     password: Yup.string().required("Password is required")
   }),
   handleSubmit: (values, { resetForm, props, setErrors }) => {
-    console.log("values", props);
-    const { loginAction } = props;
+    const { loginAction, history } = props;
     const user = {
       username: values.username,
       password: values.password
     };
-    console.log("submitHandled");
-    loginAction(user);
+
+    loginAction(user, props.history);
     resetForm();
-    props.history.push("/plantList");
   }
 })(Login);
 
