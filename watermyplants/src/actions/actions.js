@@ -59,10 +59,15 @@ export const loginAction = user => {
       .then(res => {
         console.log(res);
         localStorage.setItem("token", res.data.access_token);
+        dispatch({type: GETTING_USER})
         axiosWithAuth()
             .get('https://doc-watermyplants.herokuapp.com/users/getusername')
-            .then(res => console.log(res))
-            .catch(err => console.log(err.response))
+            .then(res => {
+              console.log(res)
+              dispatch({type: GOT_USER, payload: res.data})})
+            .catch(err => {
+              console.log(err.response)
+              dispatch({type: ERROR_GETTING_USER, payload: err.response})})
         dispatch({ type: LOGIN_SUCCESS });
       })
       .catch(err => {
