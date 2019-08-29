@@ -11,7 +11,6 @@ const PlantList = props => {
   const [plantList, setPlantList] = useState([...props.plants.data]);
   console.log(plantList)
   useEffect(() => {
-   
   },[])
   return (
     <>
