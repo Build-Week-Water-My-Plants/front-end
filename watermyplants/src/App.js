@@ -5,7 +5,7 @@ import PrivateRoute from "./utils/PrivateRoute";
 import Nav from "./components/Nav";
 import PlantForm from "./components/PlantForm";
 import Login from "./components/Login.js";
-import SignUp from "./components/SignUp";
+import SignUp from "./components/SignUp.js";
 import ProfileSettings from "./components/ProfileSettings.js";
 import FirstPlant from "./components/FirstPlant.js";
 import RecoverPassword from "./components/RecoverPassword.js";
@@ -18,8 +18,13 @@ function App() {
     <div className="App">
       <Nav />
 
+<<<<<<< HEAD
       <Route exact path="/signup" component={SignUp} />
       <Route path="/login" render={props => <Login {...props} />}/>
+=======
+      <PrivateRoute path="/signup" component={SignUp} />
+      <Route path="/login" exact component={Login} />
+>>>>>>> 750e216f88c7230165c985448125ab40dff1d5c1
 
       <PrivateRoute
         path="/plantList"

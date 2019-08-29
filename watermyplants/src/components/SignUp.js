@@ -8,12 +8,13 @@ import NavLogin from "./NavLogin";
 
 import "../sass/SignUp.scss";
 const SignupComponent = props => {
-  console.log("formik props", props);
-  const { touched, errors } = props;
+  // console.log("formik props", props);
+   const { touched, errors } = props;
   return (
     <>
       <NavLogin />
       <div className="signup-form">
+        <h1>testing</h1>
         <section>
           <h1>Water my Plants</h1>
         </section>
@@ -113,7 +114,7 @@ const SignUp = withFormik({
       //signupAction({ username: "naruto", password: "88" });
       resetForm();
       history.push("/login");
-    }
+   }
   }
 })(SignupComponent);
 
