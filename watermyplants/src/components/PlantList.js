@@ -1,19 +1,14 @@
 //Kate
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import PlantCard from "./PlantCard.js";
 import { connect } from "react-redux";
 import Nav from "./Nav";
-import { connect } from "react-redux";
-import {plantsAction} from '../actions';
-
+import { plantsAction } from "../actions";
 
 const PlantList = props => {
-
   const [plantList, setPlantList] = useState([...props.plants.data]);
-  console.log(plantList)
-  useEffect(() => {
-   
-  },[])
+  console.log(plantList);
+  useEffect(() => {}, []);
   return (
     <>
       <Nav />
@@ -40,17 +35,13 @@ const PlantList = props => {
 };
 
 const mapStateToProps = state => {
-<<<<<<< HEAD
-  console.log(state);
-};
-
-export default connect(mapStateToProps)(PlantList);
-=======
-  console.log('state', state.user)
+  console.log("state", state.user);
   return {
     user: state.user,
-    plants: state.plants,
-  }
-}
-export default connect(mapStateToProps, {plantsAction})(PlantList);
->>>>>>> c5e276846f77d0326e7f518bd59f0e5bdd8bcaa4
+    plants: state.plants
+  };
+};
+export default connect(
+  mapStateToProps,
+  { plantsAction }
+)(PlantList);
