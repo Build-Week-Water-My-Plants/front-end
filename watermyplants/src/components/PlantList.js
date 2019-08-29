@@ -4,12 +4,12 @@ import PlantCard from "./PlantCard.js";
 
 // prop.array
 const PlantList = props => {
-  console.log(props.array);
+  console.log("Props array: ", props.array);
 
   return (
     <section>
       <div className="plant-summary-component">
-        {/* {props.array.map(plants => {
+        {props.array.map(plants => {
           return(
             console.log(plants),
             <PlantCard
@@ -19,7 +19,7 @@ const PlantList = props => {
               species={plants.species} 
             />
           );
-        })} */}
+        })}
       </div>
       <img src="" alt="Add more plants" />
     </section>
