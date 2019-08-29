@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Nav from "./Nav";
 import "../sass/form.scss";
+import { Link } from "react-router-dom";
 
 const PlantForm = props => {
   const [plant, setPlant] = useState({
@@ -33,45 +34,51 @@ const PlantForm = props => {
   return (
     <>
       <Nav />
-      <section class="form-section">
-        <h2>Add Plant</h2>
-        <form onSubmit={submitForm}>
-          <div>
-            <input
-              type="text"
-              name="species"
-              onChange={plantChangeHandler}
-              value={plant.species}
-              placeholder="Species of the plant"
-            />
-            <input
-              type="text"
-              name="nickname"
-              onChange={plantChangeHandler}
-              value={plant.name}
-              placeholder="Nickname of the plant"
-            />
-            <input
-              type="text"
-              name="time"
-              placeholder="28-08-2019 9:00:00"
-              onChange={plantChangeHandler}
-              value={plant.time}
-            />
-            <input
-              type="text"
-              name="location"
-              placeholder="Kitchen"
-              onChange={plantChangeHandler}
-              value={plant.value}
-            />
-            <button type="submit">Save plant</button>
-          </div>
-          <img
-            src="images/addplant.png"
-            alt="Illustration of abstract women and plants"
-          />
-        </form>
+      <section className="form-section">
+        <div className="form-outer">
+          <h2>Add Plant</h2>
+          <form onSubmit={submitForm}>
+            <div>
+              <input
+                type="text"
+                name="species"
+                onChange={plantChangeHandler}
+                value={plant.species}
+                placeholder="Species of the plant"
+              />
+              <input
+                type="text"
+                name="nickname"
+                onChange={plantChangeHandler}
+                value={plant.name}
+                placeholder="Nickname of the plant"
+              />
+              <input
+                type="text"
+                name="time"
+                placeholder="28-08-2019 9:00:00"
+                onChange={plantChangeHandler}
+                value={plant.time}
+              />
+              <input
+                type="text"
+                name="location"
+                placeholder="Kitchen"
+                onChange={plantChangeHandler}
+                value={plant.value}
+              />
+              <button type="submit">Save plant</button>
+              <Link to="/plantlist" className="go-back-addplant">
+                <img src="images/arrow.svg" />
+                <h5>Go back</h5>
+              </Link>
+            </div>
+          </form>
+        </div>
+        <img
+          src="images/addplant.png"
+          alt="Illustration of abstract women and plants"
+        />
       </section>
     </>
   );

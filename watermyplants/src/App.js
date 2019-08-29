@@ -21,7 +21,7 @@ function App() {
       <Route path="/login" component={props => <Login {...props} />} />
 
       <PrivateRoute
-        path="/plantList"
+        path="/plantlist"
         component={props => <PlantList {...props} array={PlantsDATA} />}
       />
       <PrivateRoute

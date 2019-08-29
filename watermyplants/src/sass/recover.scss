@@ -59,9 +59,13 @@ button {
   display: flex;
   margin: 0;
   color: white;
+  height: 2em;
+  width: 5em;
   text-decoration: none;
 
   img {
     margin-right: 1em;
+    height: 1em;
+    width: auto;
   }
 }
