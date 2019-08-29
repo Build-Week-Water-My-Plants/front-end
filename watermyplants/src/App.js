@@ -41,7 +41,7 @@ function App() {
       {/* this page shouldn't be functional */}
       <Route
         path="/recoverPassword"
-        component={RecoverPassword>}
+        component={RecoverPassword}
       />
 
       {/* Sends an array of objects as dunny data */}
