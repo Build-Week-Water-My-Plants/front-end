@@ -18,10 +18,8 @@ const PlantList = (props) => {
         <div className="plant-summary-component">
           {plantList.map(plants => {
             return (
-              console.log(plants),
               (
                 <div>
-                  <h1>hi</h1>
                 <PlantCard
                   key={plants.id}
                   id={plants.id}
