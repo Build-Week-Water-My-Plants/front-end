@@ -24,7 +24,7 @@ const Login = props => {
                 <Field
                   type="text"
                   name="username"
-                  placeholder="Username or Phone"
+                  placeholder="Username"
                   className="username"
                 />
                 {touched.username && errors.username && (
