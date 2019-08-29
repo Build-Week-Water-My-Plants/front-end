@@ -5,7 +5,7 @@ import PrivateRoute from "./utils/PrivateRoute";
 import Nav from "./components/Nav";
 import PlantForm from "./components/PlantForm";
 import Login from "./components/Login.js";
-import SignUp from "./components/SignUp";
+import SignUp from "./components/SignUp.js";
 import ProfileSettings from "./components/ProfileSettings.js";
 import FirstPlant from "./components/FirstPlant.js";
 import RecoverPassword from "./components/RecoverPassword.js";
