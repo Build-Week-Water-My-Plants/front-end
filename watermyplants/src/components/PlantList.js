@@ -1,6 +1,7 @@
 //Kate
 import React from "react";
 import PlantCard from "./PlantCard.js";
+import { connect } from "react-redux";
 import Nav from "./Nav";
 
 // prop.array
@@ -32,4 +33,8 @@ const PlantList = props => {
   );
 };
 
-export default PlantList;
+const mapStateToProps = state => {
+  console.log(state);
+};
+
+export default connect(mapStateToProps)(PlantList);
