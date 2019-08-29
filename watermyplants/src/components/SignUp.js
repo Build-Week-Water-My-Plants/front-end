@@ -4,69 +4,73 @@ import { signupAction } from "../actions";
 import { Form, Field, withFormik } from "formik";
 import * as yup from "yup";
 import { Link } from "react-router-dom";
+import NavLogin from "./NavLogin";
 
 import "../sass/SignUp.scss";
 const SignUp = props => {
   // console.log("formik props", props);
   // const { touched, errors } = props;
   return (
-    <div className="signup-form">
-      Working
-      {/* <section>
-        <h1>Water my Plants</h1>
-      </section>
-      <section className="signup-display">
-        <div className="form-body">
-          <h3>Let's get started!</h3>
-          <Form className="form">
-            <Field
-              type="text"
-              name="phonenumber"
-              placeholder="phone: xxx-xxx-xxxx"
-              className="field"
-            />
-            {touched.phonenumber && errors.phonenumber && (
-              <p className="form-error">{errors.phonenumber}</p>
-            )}
-            <Field
-              type="text"
-              name="username"
-              placeholder="username"
-              className="field"
-            />
-            {touched.username && errors.username && (
-              <p className="form-error">{errors.username}</p>
-            )}
-            <Field
-              type="password"
-              name="password"
-              placeholder="password"
-              className="field"
-            />
-            {touched.password && errors.password && (
-              <p className="form-error">{errors.password}</p>
-            )}
-            <Field
-              type="password"
-              name="verifyp"
-              placeholder="please retype your password"
-              className="field"
-            />
-            {touched.verifyp && errors.verifyp && (
-              <p className="form-error">{errors.verifyp}</p>
-            )}
-            <button type="submit">Start Watering</button>
-            <div className="sign-in">
-              <p>Already have an account?</p>
-              <Link to="/login">Sign In</Link>
-            </div>
-          </Form>
-        </div>
-        <div className="sign-img">
-          <img src="images/signUp.png" />
-        </div>
-      </section> */}
-    </div>
+    <>
+      <NavLogin />
+      <div className="signup-form">
+        testing
+        {/* <section>
+          <h1>Water my Plants</h1>
+        </section>
+        <section className="signup-display">
+          <div className="form-body">
+            <h3>Let's get started!</h3>
+            <Form className="form">
+              <Field
+                type="text"
+                name="phonenumber"
+                placeholder="phone: xxx-xxx-xxxx"
+                className="field"
+              />
+              {touched.phonenumber && errors.phonenumber && (
+                <p className="form-error">{errors.phonenumber}</p>
+              )}
+              <Field
+                type="text"
+                name="username"
+                placeholder="username"
+                className="field"
+              />
+              {touched.username && errors.username && (
+                <p className="form-error">{errors.username}</p>
+              )}
+              <Field
+                type="password"
+                name="password"
+                placeholder="password"
+                className="field"
+              />
+              {touched.password && errors.password && (
+                <p className="form-error">{errors.password}</p>
+              )}
+              <Field
+                type="password"
+                name="verifyp"
+                placeholder="please retype your password"
+                className="field"
+              />
+              {touched.verifyp && errors.verifyp && (
+                <p className="form-error">{errors.verifyp}</p>
+              )}
+              <button type="submit">Start Watering</button>
+              <div className="sign-in">
+                <p>Already have an account?</p>
+                <Link to="/login">Sign In</Link>
+              </div>
+            </Form>
+          </div>
+          <div className="sign-img">
+            <img src="images/signUp.png" />
+          </div>
+        </section> */}
+      </div>
+    </>
   );
 };
 
@@ -98,7 +102,7 @@ const SignUp = props => {
 //     console.log("values", props);
 //     const { signupAction, history } = props;
 //     const user = {
-//       // phonenumber: values.phonenumber,
+//       phonenumber: values.phonenumber,
 //       username: values.username,
 //       password: values.password
 //     };
