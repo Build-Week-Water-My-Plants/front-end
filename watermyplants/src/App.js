@@ -18,8 +18,8 @@ function App() {
     <div className="App">
       <Nav />
 
-      <Route exact path="/signup" component={props => <SignUp {...props} />} />
-      <Route path="/login" component={props => <Login {...props} />} />
+      <Route exact path="/signup" component={SignUp} />
+      <Route path="/login" component={Login} />
 
       <PrivateRoute
         path="/plantList"
