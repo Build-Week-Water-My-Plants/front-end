@@ -7,15 +7,14 @@ import { Link } from "react-router-dom";
 import NavLogin from "./NavLogin";
 
 import "../sass/SignUp.scss";
-const SignUp = props => {
+const SignupComponent = props => {
   // console.log("formik props", props);
-  // const { touched, errors } = props;
+   const { touched, errors } = props;
   return (
     <>
       <NavLogin />
       <div className="signup-form">
-        <h1>testing</h1>
-        {/* <section>
+        <section>
           <h1>Water my Plants</h1>
         </section>
         <section className="signup-display">
@@ -68,55 +67,55 @@ const SignUp = props => {
           <div className="sign-img">
             <img src="images/signUp.png" />
           </div>
-        </section> */}
+        </section>
       </div>
     </>
   );
 };
 
-// const SignUp = withFormik({
-//   mapPropsToValues: ({ phonenumber, username, password, verifyp }) => {
-//     return {
-//       phonenumber: phonenumber || "",
-//       username: username || "",
-//       password: password || "",
-//       verifyp: verifyp || ""
-//     };
-//   },
-//   validationSchema: yup.object().shape({
-//     phonenumber: yup
-//       .string()
-//       .matches(/^[2-9]\d{2}-\d{3}-\d{4}$/, "please use XXX-XXX-XXX format")
-//       .required("phone number is required"),
-//     username: yup.string().required("username is required"),
-//     password: yup
-//       .string()
-//       .min(4, "Password must be at least 4 characters long")
-//       .required("Password is required"),
-//     verifyp: yup
-//       .string()
-//       .min(4, "Password must be at least 4 characters long")
-//       .required("Please retype your password")
-//   }),
-//   handleSubmit: (values, { resetForm, props, setErrors }) => {
-//     console.log("values", props);
-//     const { signupAction, history } = props;
-//     const user = {
-//       phonenumber: values.phonenumber,
-//       username: values.username,
-//       password: values.password
-//     };
-//     if (values.password !== values.verifyp) {
-//       setErrors({ verifyp: "password does not match" });
-//     } else {
-//       console.log("submitHandled");
-//       signupAction(user);
-//       //signupAction({ username: "naruto", password: "88" });
-//       resetForm();
-//       history.push("/login");
-//    }
-//   }
-// })(SignupComponent);
+const SignUp = withFormik({
+  mapPropsToValues: ({ phonenumber, username, password, verifyp }) => {
+    return {
+      phonenumber: phonenumber || "",
+      username: username || "",
+      password: password || "",
+      verifyp: verifyp || ""
+    };
+  },
+  validationSchema: yup.object().shape({
+    phonenumber: yup
+      .string()
+      .matches(/^[2-9]\d{2}-\d{3}-\d{4}$/, "please use XXX-XXX-XXX format")
+      .required("phone number is required"),
+    username: yup.string().required("username is required"),
+    password: yup
+      .string()
+      .min(4, "Password must be at least 4 characters long")
+      .required("Password is required"),
+    verifyp: yup
+      .string()
+      .min(4, "Password must be at least 4 characters long")
+      .required("Please retype your password")
+  }),
+  handleSubmit: (values, { resetForm, props, setErrors }) => {
+    console.log("values", props);
+    const { signupAction, history } = props;
+    const user = {
+      phonenumber: values.phonenumber,
+      username: values.username,
+      password: values.password
+    };
+    if (values.password !== values.verifyp) {
+      setErrors({ verifyp: "password does not match" });
+    } else {
+      console.log("submitHandled");
+      signupAction(user);
+      //signupAction({ username: "naruto", password: "88" });
+      resetForm();
+      history.push("/login");
+   }
+  }
+})(SignupComponent);
 
 export default connect(
   null,
