@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "name": "watermyplants",
+    "builds": [
+        {
+            "src": "watermyplants/package.json",
+            "use": "@now/static-build",
+            "config": {
+                "distDir": "build"
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "watermyplants/$1"
+        }
+    ]
+}

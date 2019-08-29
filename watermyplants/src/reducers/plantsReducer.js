@@ -132,8 +132,8 @@ export const plantsReducer = (state = initialState, action) => {
       return {
         ...state,
         user: {
-          isLoading: true,
           ...state.user,
+          isLoading: true,
           error: ""
         }
       };
@@ -150,18 +150,19 @@ export const plantsReducer = (state = initialState, action) => {
       return {
         ...state,
         user: {
+          ...state.user,
           error: action.payload,
           isLoading: false,
-          ...state.user
         }
       };
     case GETTING_PLANTS:
       return {
         ...state,
         plants: {
+          ...state.plants,
           isLoading: true,
           error: "",
-          ...state.plants
+         
         }
       };
     case GOT_PLANTS:
@@ -326,39 +327,12 @@ export const plantsReducer = (state = initialState, action) => {
           error: action.payload
         }
       };
+    
+
+    default: 
+      return state;
 
     ///update user, delete user needs added
   }
 };
 
-// DELETEUSER_FAIL,
-// DELETEUSER_START,
-// DELETEUSER_SUCCESS,
-// UPDATE_USER_FAIL,
-// UPDATE_USER_START,
-// UPDATE_USER_SUCCESS
-//     switch (type){
-//         case LOGIN_FAIL:
-//             return{
-//                 ...state,
-//                 isLoggingIn: false,
-//                 error: payload
-//             }
-//         case LOGIN_START:
-//             return {
-//                 ...state,
-//                 isLoggingIn: true,
-//                 error: false
-//             }
-//         case LOGIN_SUCCESS:
-//             return{
-//                 ...state,
-//                 isLoggingIn: false,
-//                 isLoggedIn: true,
-//                 token: localStorage.getItem('token'),
-//                 error: false
-//             }
-//         default:
-//             return state;
-//     }
-//  }
