@@ -114,7 +114,7 @@ const SignUp = props => {
 //       //signupAction({ username: "naruto", password: "88" });
 //       resetForm();
 //       history.push("/login");
-//     }
+//    }
 //   }
 // })(SignupComponent);
 
