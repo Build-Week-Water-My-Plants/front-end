@@ -17,11 +17,7 @@ const RecoverPassword = props => {
           />
         <button type="submit">Send Link</button>
         <p>
-<<<<<<< HEAD
-          Don't have an account? <a href="/signup">Sign Up</a>
-=======
           Don't have an account? <Link to="/signup">Sign Up</Link>
->>>>>>> 9de06601800e90e6db027fa5c121bafdaa7658a4
         </p>
       </form>
       <img
