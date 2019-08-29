@@ -1,36 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { signupAction } from "../actions";
 import { Form, Field, withFormik } from "formik";
 import * as yup from "yup";
 
 const SignupComponent = props => {
-  const [login, setLogin] = useState({ user: "", phone: "", password: "" });
-
-  // /   function validatePassword() {
-  //     // If password.input === confirmPassword.input, then only set the finalized user
-  //   }
-
-  const changeHandler = e => {
-    console.log(e.target.value);
-    setLogin({ ...login, [e.target.name]: e.target.value });
-    console.log(login);
-  };
-  const submitForm = e => {
-    e.preventDefault();
-    // Calls validatePassword
-    const newLogin = {
-      ...login
-    };
-    props.addNewLogin(login);
-    setLogin({ user: "", password: "" });
-  };
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    props.signupAction({ username: "HiDoc", password: "test" });
-  };
-
   console.log("formik props", props);
   const { touched, errors } = props;
   return (
@@ -87,7 +61,10 @@ const SignUp = withFormik({
     };
   },
   validationSchema: yup.object().shape({
-    phonenumber: yup.string().required("phone number is required"),
+    phonenumber: yup
+      .string()
+      .matches(/^[2-9]\d{2}-\d{3}-\d{4}$/, "phone number is not valid")
+      .required("phone number is required"),
     username: yup.string().required("username is required"),
     password: yup
       .string()
