@@ -226,7 +226,7 @@ export const plantsReducer = (state = initialState, action) => {
         ...state,
         plants: {
           ...state.plants,
-          data: [...action.payload],
+          data: [...state.plants.data, action.payload],
           isLoading: false,
           error: ""
         }
