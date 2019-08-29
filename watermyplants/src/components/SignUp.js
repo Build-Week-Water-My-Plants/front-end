@@ -58,9 +58,8 @@ const SignupComponent = props => {
               <p>Have an account?</p>
             <a href="/login">Sign In</a>
           </div>
-              <p>Don't have an account?</p>
-              <a href="#">Sign Up</a>
-            </div>
+          <p>Don't have an account?</p>
+          <a href="#">Sign Up</a>
           </Form>
         </div>
         <div className="sign-img">
