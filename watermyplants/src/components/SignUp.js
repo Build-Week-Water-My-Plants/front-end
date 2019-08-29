@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { signupAction } from "../actions";
 import { Form, Field, withFormik } from "formik";
 import * as yup from "yup";
+import { Link } from "react-router-dom";
 
 import "../sass/SignUp.scss";
 const SignupComponent = props => {
@@ -55,11 +56,9 @@ const SignupComponent = props => {
             )}
             <button type="submit">Start Watering</button>
             <div className="sign-in">
-              <p>Have an account?</p>
-            <a href="/login">Sign In</a>
-          </div>
-          <p>Don't have an account?</p>
-          <a href="#">Sign Up</a>
+              <p>Already have an account?</p>
+              <Link to="/login">Sign In</Link>
+            </div>
           </Form>
         </div>
         <div className="sign-img">
