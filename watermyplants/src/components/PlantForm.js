@@ -4,7 +4,7 @@ import React, {useState} from "react";
 const PlantForm = props => {
   const [plant, setPlant] = useState({species: "",
   name: "",
-  time: "28-08-2019 9:00:00",
+  time: "",
   location: ""})
 
   const plantChangeHandler = e => {
@@ -14,10 +14,23 @@ const PlantForm = props => {
     setPlant({...plant, [name]: value})
   }
 
+  const submitForm = e => {
+    e.preventDefault();
+    console.log(plant);
+    props.addNewPlant(...plant);
+    setPlant({
+      species: "",
+      name: "",
+      time: "",
+      location: "",
+    });
+  };
+
+
   return (
     <section>
       <h2>Add Plant</h2>
-      <form>
+      <form onSubmit={submitForm}>
         <div>
           <input
             type="text"
