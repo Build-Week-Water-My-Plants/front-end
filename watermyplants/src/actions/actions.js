@@ -42,7 +42,7 @@ export const UPDATE_USER_SUCCESS = "UPDATE_USER_SUCCESS";
 export const UPDATE_USER_FAIL = "UPDATE_USER_FAIL";
 
 ///login
-export const loginAction = user => {
+export const loginAction = (user, history) => {
   return dispatch => {
     dispatch({ type: LOGIN_START });
     axios
@@ -59,16 +59,18 @@ export const loginAction = user => {
       .then(res => {
         console.log(res);
         localStorage.setItem("token", res.data.access_token);
+        dispatch({ type: LOGIN_SUCCESS });
         dispatch({type: GETTING_USER})
         axiosWithAuth()
             .get('https://doc-watermyplants.herokuapp.com/users/getusername')
             .then(res => {
               console.log(res)
-              dispatch({type: GOT_USER, payload: res.data})})
+              dispatch({type: GOT_USER, payload: res.data})
+              history.push('/plantList')})
+             
             .catch(err => {
               console.log(err.response)
               dispatch({type: ERROR_GETTING_USER, payload: err.response})})
-        dispatch({ type: LOGIN_SUCCESS });
       })
       .catch(err => {
         console.dir(err);
