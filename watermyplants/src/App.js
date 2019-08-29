@@ -19,7 +19,7 @@ function App() {
       <Nav />
 
       <Route path="/signup" component={SignUp} />
-      <Route path="/login" component={Login} />
+      <Route path="/" component={Login} />
 
       <PrivateRoute
         path="/plantList"
