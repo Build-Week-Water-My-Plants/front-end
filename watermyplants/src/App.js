@@ -21,10 +21,15 @@ import UpdatePlant from "./components/UpdatePlant";
 function App() {
   return (
     <div className="App">
+<<<<<<< HEAD
       <Nav />
 
       <Route exact path="/signup" component={props => <SignUp {...props} />} />
       <Route path="/login" component={props => <Login {...props} />} />
+=======
+      <Route exact path="/" render={props => <SignUp {...props} />} />
+      <Route path="/login" render={props => <Login {...props} />} />
+>>>>>>> d032ecfa1d542deed5861ff2b8e3c75f77a229cb
 
       <PrivateRoute
         path="/plantList"
