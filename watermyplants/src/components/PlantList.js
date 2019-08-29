@@ -1,5 +1,6 @@
 //Kate
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import PlantCard from "./PlantCard.js";
 import { connect } from "react-redux";
 import Nav from "./Nav";
@@ -33,7 +34,10 @@ const PlantList = (props) => {
           })}
          <Link to='/addplant'> <button>Add Plant</button></Link>
         </div>
-        <img src="" alt="Add more plants" />
+        <Link to="/addPlant" >
+          <img src="images/smallAdd.svg" alt="Add more plants, small add icon from Font Awesome" />
+        </Link>
+        <img src="images/smallLeaf.svg" alt="Small leaf icon from Font Awesome" />
       </section>
     </>
   );

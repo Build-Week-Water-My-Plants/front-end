@@ -7,7 +7,7 @@ const PlantCard = props => {
         <div key={props.id}>
             <h3>{props.name}</h3>
             <h5>{props.species}</h5>
-            <img src="" alt="Calendar picture" />
+            <img src="images/calander.svg" alt="Calendar icon" />
         </div>
     );
 }
