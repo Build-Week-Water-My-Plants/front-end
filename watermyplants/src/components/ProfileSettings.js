@@ -16,7 +16,7 @@ const ProfileSettings = props => {
   const submitForm = e => {
     e.preventDefault();
     console.log(user);
-    props.addNewPlant(...user);
+    props.addNewUser(...user);
     setUser({
       username: "", 
       phonenumber: "",
