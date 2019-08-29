@@ -1,56 +1,71 @@
-import React, { useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { signupAction } from "../actions";
 import { Form, Field, withFormik } from "formik";
 import * as yup from "yup";
 
+import "../sass/SignUp.scss";
 const SignupComponent = props => {
-  const [login, setLogin] = useState({ user: "", phone: "", password: "" })
- 
-  // /   function validatePassword() {
-    //     // If password.input === confirmPassword.input, then only set the finalized user
-    //   }
-    
-      const changeHandler = e => {
-        console.log(e.target.value);
-        setLogin({ ...login, [e.target.name]: e.target.value });
-        console.log(login);
-      };
-      const submitForm = e => {
-        e.preventDefault();
-        // Calls validatePassword
-        const newLogin = {
-          ...login
-        };
-        props.addNewLogin(login);
-        setLogin({ user: "", password: "" });
-      };
-    
-      const handleSubmit = e => {
-        e.preventDefault();
-        props.signupAction({ username: "HiDoc", password: "test" });
-      };
-    
-
   console.log("formik props", props);
   const { touched, errors } = props;
   return (
     <div className="signup-form">
-      <h1>User Sign in</h1>
-      <Form>
-        {touched.phonenumber && errors.phonenumber && (
-          <p className="form-error">{errors.phonenumber}</p>
-        )}
-        <Field type="text" name="phonenumber" placeholder="phonenumber"  onChange={changeHandler}/>
-        <Field type="text" name="username" placeholder="username" onChange={changeHandler}/>
-        <Field type="password" name="password" placeholder="password"onChange={changeHandler} />
-        <Field
-          type="password"
-          name="verifyp"
-          placeholder="please retype your password"
-        />
-        <button onClick={(e) => handleSubmit(e)} type="submit">Submit</button>
-      </Form>
+      <section>
+        <h1>Water my Plants</h1>
+      </section>
+      <section className="signup-display">
+        <div className="form-body">
+          <h3>Let's get started!</h3>
+          <Form className="form">
+            <Field
+              type="text"
+              name="phonenumber"
+              placeholder="phone: xxx-xxx-xxxx"
+              className="field"
+            />
+            {touched.phonenumber && errors.phonenumber && (
+              <p className="form-error">{errors.phonenumber}</p>
+            )}
+            <Field
+              type="text"
+              name="username"
+              placeholder="username"
+              className="field"
+            />
+            {touched.username && errors.username && (
+              <p className="form-error">{errors.username}</p>
+            )}
+            <Field
+              type="password"
+              name="password"
+              placeholder="password"
+              className="field"
+            />
+            {touched.password && errors.password && (
+              <p className="form-error">{errors.password}</p>
+            )}
+            <Field
+              type="password"
+              name="verifyp"
+              placeholder="please retype your password"
+              className="field"
+            />
+            {touched.verifyp && errors.verifyp && (
+              <p className="form-error">{errors.verifyp}</p>
+            )}
+            <button type="submit">Start Watering</button>
+            <div className="sign-in">
+              <p>Have an account?</p>
+            <a href="/login">Sign In</a>
+          </div>
+          <p>Don't have an account?</p>
+          <a href="#">Sign Up</a>
+          </Form>
+        </div>
+        <div className="sign-img">
+          <img src="images/signUp.png" />
+        </div>
+      </section>
     </div>
   );
 };
@@ -65,7 +80,10 @@ const SignUp = withFormik({
     };
   },
   validationSchema: yup.object().shape({
-    phonenumber: yup.number().required("phone number is required"),
+    phonenumber: yup
+      .string()
+      .matches(/^[2-9]\d{2}-\d{3}-\d{4}$/, "please use XXX-XXX-XXX format")
+      .required("phone number is required"),
     username: yup.string().required("username is required"),
     password: yup
       .string()
@@ -75,71 +93,28 @@ const SignUp = withFormik({
       .string()
       .min(4, "Password must be at least 4 characters long")
       .required("Please retype your password")
-  })
+  }),
+  handleSubmit: (values, { resetForm, props, setErrors }) => {
+    console.log("values", props);
+    const { signupAction, history } = props;
+    const user = {
+      // phonenumber: values.phonenumber,
+      username: values.username,
+      password: values.password
+    };
+    if (values.password !== values.verifyp) {
+      setErrors({ verifyp: "password does not match" });
+    } else {
+      console.log("submitHandled");
+      signupAction(user);
+      //signupAction({ username: "naruto", password: "88" });
+      resetForm();
+      history.push("/login");
+    }
+  }
 })(SignupComponent);
 
 export default connect(
   null,
   { signupAction }
 )(SignUp);
-
-
-// const SignUp = props => {
-//   const [login, setLogin] = useState({ user: "", phone: "", password: "" });
-
-//   function validatePassword() {
-//     // If password.input === confirmPassword.input, then only set the finalized user
-//   }
-
-//   const changeHandler = e => {
-//     console.log(e.target.value);
-//     setLogin({ ...login, [e.target.name]: e.target.value });
-//     console.log(login);
-//   };
-//   const submitForm = e => {
-//     e.preventDefault();
-//     // Calls validatePassword
-//     const newLogin = {
-//       ...login
-//     };
-//     props.addNewLogin(login);
-//     setLogin({ user: "", password: "" });
-//   };
-
-//   const handleSubmit = e => {
-//     e.preventDefault();
-//     props.signupAction({ username: "HiDoc", password: "test" });
-//   };
-
-//   return (
-//     <section>
-//       <h1>Water My Plants</h1>
-//       <form onSubmit={handleSubmit}>
-//         <h2>Let's Get Started!</h2>
-//         <div>
-//           <input type="tel" name="phonenumber" placeholder="Phone Number" />
-//           <input type="password" name="password" placeholder="Password" />
-//           <input
-//             type="password"
-//             name="password"
-//             placeholder="Confirm Password"
-//             onChange={changeHandler}
-//           />
-//           />
-//           <button type="submit" onSubmit={handleSubmit}>
-//             Start Watering
-//           </button>
-//           <p>
-//             Have an account? <a href="#">Sign In</a>
-//           </p>
-//         </div>
-//         <img alt="Cartoon women with long hair on a computer in front of window." />
-//       </form>
-//     </section>
-//   );
-// };
-
-// export default connect(
-//   null,
-//   { signupAction }
-// )(SignUp);
