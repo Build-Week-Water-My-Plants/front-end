@@ -1,18 +1,20 @@
 //Kate
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PlantCard from "./PlantCard.js";
+import { connect } from "react-redux";
 import Nav from "./Nav";
+import { plantsAction } from "../actions";
 
-// prop.array
 const PlantList = props => {
-  console.log("Props array: ", props.array);
-
+  const [plantList, setPlantList] = useState([...props.plants.data]);
+  console.log(plantList);
+  useEffect(() => {}, []);
   return (
     <>
       <Nav />
       <section>
         <div className="plant-summary-component">
-          {props.array.map(plants => {
+          {plantList.map(plants => {
             return (
               console.log(plants),
               (
@@ -32,4 +34,14 @@ const PlantList = props => {
   );
 };
 
-export default PlantList;
+const mapStateToProps = state => {
+  console.log("state", state.user);
+  return {
+    user: state.user,
+    plants: state.plants
+  };
+};
+export default connect(
+  mapStateToProps,
+  { plantsAction }
+)(PlantList);

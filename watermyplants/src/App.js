@@ -2,15 +2,10 @@ import React from "react";
 import "./App.scss";
 import { Route } from "react-router-dom";
 import PrivateRoute from "./utils/PrivateRoute";
-
-import { PlantContext } from "./contexts/PlantContexts";
-
-import { plantsReducer } from "./reducers/reducer";
-
 import Nav from "./components/Nav";
 import PlantForm from "./components/PlantForm";
 import Login from "./components/Login.js";
-import SignUp from "./components/SignUp";
+import SignUp from "./components/SignUp.js";
 import ProfileSettings from "./components/ProfileSettings.js";
 import FirstPlant from "./components/FirstPlant.js";
 import RecoverPassword from "./components/RecoverPassword.js";
@@ -33,24 +28,12 @@ function App() {
         path="/plantform"
         component={props => <PlantForm {...props} />}
       />
-      <PrivateRoute
-        path="/firstPlant"
-        component={props => <FirstPlant {...props} />}
-      />
-      <PrivateRoute
-        path="/profile"
-        component={props => <ProfileSettings {...props} />}
-      />
-      <PrivateRoute
-        path="/addplant"
-        component={props => <PlantForm {...props} />}
-      />
+      <PrivateRoute path="/firstPlant" component={FirstPlant} />
+      <PrivateRoute path="/profile" component={ProfileSettings} />
+      <PrivateRoute path="/addplant" component={PlantForm} />
 
       {/* this page shouldn't be functional */}
-      <Route
-        path="/recoverPassword"
-        component={props => <RecoverPassword {...props} />}
-      />
+      <Route path="/recoverPassword" component={RecoverPassword} />
 
       {/* Sends an array of objects as dunny data */}
       <PrivateRoute path="/plant" component={PlantList} />
