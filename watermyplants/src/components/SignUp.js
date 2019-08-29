@@ -101,7 +101,7 @@ const SignUp = withFormik({
     console.log("values", props);
     const { signupAction, history } = props;
     const user = {
-      // phonenumber: values.phonenumber,
+      phonenumber: values.phonenumber,
       username: values.username,
       password: values.password
     };
