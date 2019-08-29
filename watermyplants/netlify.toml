@@ -1,7 +1,7 @@
 [build]
 base = 'watermyplants'
 publish = 'watermyplants/build/'
-command = 'npm run build'
+command = 'yarn build'
 
 [[redirects]]
 from = '/*'
