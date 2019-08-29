@@ -1,6 +1,7 @@
 [build]
-base = '/'
-publish = '/build/'
+base = 'watermyplants'
+publish = 'watermyplants/build/'
+command = 'npm run build'
 
 [[redirects]]
 from = '/*'
