@@ -1,2 +1,16 @@
 @import "variables";
 @import "mixins";
+
+.first-plant{
+    font-family: $signika;
+    h2{
+        margin-top: 289px;
+        color: $dark-pink;
+        text-align: center;
+        font-size: 36px;
+    }
+    .link-images{
+        @include display-flex();
+        margin-top: 125px;
+    }
+}
