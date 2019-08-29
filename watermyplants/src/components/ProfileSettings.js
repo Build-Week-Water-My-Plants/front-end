@@ -38,6 +38,7 @@ const ProfileSettings = props => {
             value={user.username} 
             placeholder="Example"
              />
+             <hr/>
           <button type="submit" className="edit">edit</button>
           </div>
           <div className="phonenumber">
@@ -49,6 +50,7 @@ const ProfileSettings = props => {
             value={user.phonenumber}  
             placeholder="000-000-0000" 
             />
+            <hr/>
           <button type="submit" className="edit">edit</button>
           </div>
           <img src="images/profileSettings.png" alt="hold" />

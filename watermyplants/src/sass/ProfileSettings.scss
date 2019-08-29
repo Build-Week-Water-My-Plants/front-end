@@ -10,9 +10,10 @@
         text-decoration: underline;
         text-decoration-color: $med-blue;
         margin-left: 112px;
+        font-size: 36px;
     }
     hr{
-        margin-top: -24px;
+        margin-top: -37px;
     }
     form{
         @include display-flex($jC: space-evenly);
@@ -27,23 +28,30 @@
         }
         input{
             border: 0px solid $light-blue;
+            border-bottom: 2px solid $dark-blue;
             background: $light-blue;
-            margin-left: 10px;
+            margin-left: 15px;
             font-size: 22px;
             width: 140px;
             height: 30px;
+            padding-top: 16px;
+            padding-bottom: 14px;
+            // margin-bottom: -28px;
         }
         label{
             font-weight: 600;
         }
+        button.edit{
+            border: 0px solid $dark-blue;
+            font-size: 22px;
+            margin: 0% auto;
+            background: $light-blue;
+            border-bottom: 2px solid $dark-blue;
+            padding: 0px;
+            border-radius: 0px;
+            margin-right: 10px;
+        }
 
     }
-    button.edit{
-        border: 0px solid $dark-blue;
-        font-size: 22px;
-        margin: 0% auto;
-        background: $light-blue;
-        text-decoration: underline;
-        text-decoration-color: $dark-blue;
-    }
+
 }
