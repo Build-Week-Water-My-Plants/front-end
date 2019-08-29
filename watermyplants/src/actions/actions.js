@@ -201,13 +201,14 @@ export const updatePlant = plant => {
 };
 
 //add plant
-export const addPlant = plant => {
+export const addPlant = ( plant, history )=> {
   return dispatch => {
     dispatch({type: ADD_PLANT_START})
     axiosWithAuth()
       .post(`https://doc-watermyplants.herokuapp.com/plants/plant/`, plant)
       .then(res => {
         dispatch({type: ADD_PLANT_SUCCESS, payload: res.data})
+        history.push('/plantList')
       })
       .catch(err => {
         dispatch({type: ADD_PLANT_FAILED, payload: err})

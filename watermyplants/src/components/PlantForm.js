@@ -26,7 +26,6 @@ const PlantForm = props => {
       time: "",
       location: "",
     });
-    props.history.push('/plantList')
   };
 
 
@@ -49,36 +48,6 @@ const PlantForm = props => {
             value={plant.name}
             placeholder="Nickname of the plant"
           />
-          {/* Days as buttons, perhaps?? */}
-          {/* <div class="days-select">
-            <img src="" alt="Some calendar pic" />
-            <button class="calendar-day">
-              <h4>M</h4>
-            </button>
-            <button class="calendar-day">
-              <h4>T</h4>
-            </button>
-            <button class="calendar-day">
-              <h4>W</h4>
-            </button>
-            <button class="calendar-day">
-              <h4>Th</h4>
-            </button>
-            <button class="calendar-day">
-              <h4>F</h4>
-            </button>
-            <button class="calendar-day">
-              <h4>Sat</h4>
-            </button>
-            <button class="calendar-day">
-              <h4>Sun</h4>
-            </button>
-          </div> */}
-          {/* <div class="time-chosen">
-            <input type="number" id="hour" name="hour" min="00" />
-            <p>:</p>
-            <input type="number" id="minute" name="minute" min="00" max="60" />
-          </div> */}
           <input 
             type="text" 
             name="time" 
@@ -86,9 +55,6 @@ const PlantForm = props => {
             onChange={plantChangeHandler}
             value={plant.time}
              />
-          {/* <button class="am">am</button>
-          <button class="pm">pm</button>
-          <br /> */}
           <input 
             type="text" 
             name="location" 
@@ -104,4 +70,11 @@ const PlantForm = props => {
   );
 };
 
-export default connect (null,{addPlant} )(PlantForm);
+const mapStateToProps = state => {
+  console.log("state", state, '2');
+  return {
+    user: state.user,
+  };
+};
+
+export default connect (mapStateToProps,{addPlant} )(PlantForm);

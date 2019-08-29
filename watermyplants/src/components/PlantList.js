@@ -1,6 +1,8 @@
 //Kate
 import React, { useState, useEffect } from "react";
+import Nav from './Nav';
 import { connect } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 import { plantsAction } from '../actions/actions'
 import PlantCard from "./PlantCard.js";
 
@@ -34,6 +36,9 @@ const PlantList = (props) => {
         </div>
         <img src="" alt="Add more plants" />
       </section>
+      <NavLink to='/addplant'>
+      <button>Add a new plant</button>
+      </NavLink>
     </>
   );
 };
