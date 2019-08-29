@@ -21,7 +21,8 @@ import UpdatePlant from "./components/UpdatePlant";
 function App() {
   return (
     <div className="App">
-      <Route exact path="/signup" component={props => <SignUp {...props} />} />
+      <Route path="/signup" component={props => <SignUp {...props} />} />
+      <Route exact path="/" component={props => <SignUp {...props} />} />
       <Route path="/login" component={props => <Login {...props} />} />
 
       <PrivateRoute
