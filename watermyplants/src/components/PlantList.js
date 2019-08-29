@@ -1,47 +1,29 @@
 //Kate
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PlantCard from "./PlantCard.js";
-import { connect } from "react-redux";
-import Nav from "./Nav";
-import { plantsAction } from "../actions";
 
+// prop.array
 const PlantList = props => {
-  const [plantList, setPlantList] = useState([...props.plants.data]);
-  console.log(plantList);
-  useEffect(() => {}, []);
+  console.log("Props array: ", props.array);
+
   return (
-    <>
-      <Nav />
-      <section>
-        <div className="plant-summary-component">
-          {plantList.map(plants => {
-            return (
-              console.log(plants),
-              (
-                <PlantCard
-                  key={plants.id}
-                  id={plants.id}
-                  name={plants.name}
-                  species={plants.species}
-                />
-              )
-            );
-          })}
-        </div>
-        <img src="" alt="Add more plants" />
-      </section>
-    </>
+    <section>
+      <div className="plant-summary-component">
+        {props.array.map(plants => {
+          return(
+            console.log(plants),
+            <PlantCard
+              key={plants.id}
+              id={plants.id}
+              name={plants.name}
+              species={plants.species} 
+            />
+          );
+        })}
+      </div>
+      <img src="" alt="Add more plants" />
+    </section>
   );
 };
 
-const mapStateToProps = state => {
-  console.log("state", state.user);
-  return {
-    user: state.user,
-    plants: state.plants
-  };
-};
-export default connect(
-  mapStateToProps,
-  { plantsAction }
-)(PlantList);
+export default PlantList;

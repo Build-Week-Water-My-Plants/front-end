@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 // import { Route, Link } f rom "react-router-dom";
 import { connect } from "react-redux";
 import { loginAction } from "../actions";
@@ -53,7 +53,7 @@ const Login = props => {
               </a>
             </div>
           </Form>
-          <img src="images/login.png" />
+          <img src="images/login.png" alt='login-img' />
         </div>
       </div>
     </>
@@ -73,9 +73,8 @@ const FormikLogin = withFormik({
   }),
   handleSubmit: (values, { resetForm, props, setErrors }) => {
     console.log("values", props);
-    const { loginAction, history } = props;
+    const { loginAction } = props;
     const user = {
-      // phonenumber: values.phonenumber,
       username: values.username,
       password: values.password
     };

@@ -65,7 +65,7 @@ const SignupComponent = props => {
             </Form>
           </div>
           <div className="sign-img">
-            <img src="images/signUp.png" />
+            <img src="images/signUp.png" alt='img-signup' />
           </div>
         </section>
       </div>

@@ -9,9 +9,9 @@ import SignUp from "./components/SignUp";
 import ProfileSettings from "./components/ProfileSettings.js";
 import FirstPlant from "./components/FirstPlant.js";
 import RecoverPassword from "./components/RecoverPassword.js";
-import PlantsDATA from "./components/PlantsDATA";
+// import PlantsDATA from "./components/PlantsDATA";
 import PlantList from "./components/PlantList";
-import UpdatePlant from "./components/UpdatePlant";
+// import UpdatePlant from "./components/UpdatePlant";
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
       <Nav />
 
       <Route exact path="/signup" component={SignUp} />
-      <Route path="/login" component={Login} />
+      <Route path="/login" render={props => <Login {...props} />}/>
 
       <PrivateRoute
         path="/plantList"
