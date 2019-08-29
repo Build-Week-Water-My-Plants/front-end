@@ -18,8 +18,8 @@ function App() {
     <div className="App">
       <Nav />
 
-      <PrivateRoute path="/signup" component={SignUp} />
-      <Route path="/" exact component={Login} />
+      <Route path="/signup" component={SignUp} />
+      <Route path="/login" exact component={Login} />
 
       <PrivateRoute
         path="/plantList"
