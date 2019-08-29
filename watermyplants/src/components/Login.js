@@ -36,6 +36,7 @@ const Login = props => {
               {touched.password && errors.password && (
                 <p className="error">{errors.password}</p>
               )}
+              <a href="#" className="recover-password link">Forgot your password?</a>
             </div>
             <button onClick={e => handleSubmit(e)} type="submit">
               Sign In
@@ -43,7 +44,7 @@ const Login = props => {
           </div>
           <div className="sign-in">
               <p>Don't have an account?</p>
-            <a href="#">Sign Up</a>
+            <a href="#" className="link">Sign Up</a>
           </div>
         </Form>
         <img src="images/login.png" />
