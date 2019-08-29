@@ -1,5 +1,7 @@
 //Kate
 import React, {useState} from "react";
+import {connect} from 'react-redux'
+import { addPlant } from '../actions/actions'
 
 const PlantForm = props => {
   const [plant, setPlant] = useState({species: "",
@@ -17,13 +19,14 @@ const PlantForm = props => {
   const submitForm = e => {
     e.preventDefault();
     console.log(plant);
-    props.addNewPlant(...plant);
+    props.addPlant(plant);
     setPlant({
       species: "",
       name: "",
       time: "",
       location: "",
     });
+    props.history.push('/plantList')
   };
 
 
@@ -101,4 +104,4 @@ const PlantForm = props => {
   );
 };
 
-export default PlantForm;
+export default connect (null,{addPlant} )(PlantForm);

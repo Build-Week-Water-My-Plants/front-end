@@ -8,7 +8,6 @@ import NavLogin from "./NavLogin";
 
 import "../sass/Login.scss";
 const Login = props => {
-  console.log("Formik Props: ", props);
   const { touched, errors } = props;
 
   return (

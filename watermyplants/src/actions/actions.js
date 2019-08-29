@@ -164,7 +164,6 @@ export const plantsAction = username => {
       });
   };
 };
-
 ///delete a plant
 export const deletePlant = id => {
   return dispatch => {
