@@ -99,8 +99,8 @@ const SignUp = withFormik({
       .required("Please retype your password")
   }),
   handleSubmit: (values, { resetForm, props, setErrors }) => {
-    console.log("values", values);
-    const { signupAction } = props;
+    console.log("values", props);
+    const { signupAction, history } = props;
     const user = {
       // phonenumber: values.phonenumber,
       username: values.username,
@@ -113,6 +113,7 @@ const SignUp = withFormik({
       signupAction(user);
       //signupAction({ username: "naruto", password: "88" });
       resetForm();
+      history.push("/login");
     }
   }
 })(SignupComponent);
