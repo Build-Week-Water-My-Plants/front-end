@@ -16,20 +16,21 @@ const SignupComponent = props => {
       <section className="signup-display">
         <div className="form-body">
           <h3>Let's get started</h3>
-          <Form>
+          <Form className="form">
             <Field
               type="text"
               name="phonenumber"
               placeholder="phone: xxx-xxx-xxxx"
+              className="field"
             />
             {touched.phonenumber && errors.phonenumber && (
               <p className="form-error">{errors.phonenumber}</p>
             )}
-            <Field type="text" name="username" placeholder="username" />
+            <Field type="text" name="username" placeholder="username" className="field" />
             {touched.username && errors.username && (
               <p className="form-error">{errors.username}</p>
             )}
-            <Field type="password" name="password" placeholder="password" />
+            <Field type="password" name="password" placeholder="password" className="field" />
             {touched.password && errors.password && (
               <p className="form-error">{errors.password}</p>
             )}
@@ -37,6 +38,7 @@ const SignupComponent = props => {
               type="password"
               name="verifyp"
               placeholder="please retype your password"
+              className="field"
             />
             {touched.verifyp && errors.verifyp && (
               <p className="form-error">{errors.verifyp}</p>
@@ -45,7 +47,7 @@ const SignupComponent = props => {
           </Form>
         </div>
         <div className="sign-img">
-          <p>img</p>
+          <img src="images/signUp.png"/>
         </div>
       </section>
     </div>
