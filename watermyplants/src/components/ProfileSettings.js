@@ -2,6 +2,7 @@
 import React from "react";
 import Nav from "./Nav";
 
+import "../sass/ProfileSettings.scss"
 const ProfileSettings = props => {
   return (
     <>
