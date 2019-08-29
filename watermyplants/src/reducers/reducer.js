@@ -220,7 +220,7 @@ export const plantsReducer = (state = initialState, action) => {
           error: ""
         }
       };
-    case ADD_PLANT_START:
+    case ADD_PLANT_SUCCESS:
       return {
         ...state,
         plants: {

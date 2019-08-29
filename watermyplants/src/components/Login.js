@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 // import { Route, Link } f rom "react-router-dom";
 import { connect } from "react-redux";
-import { loginAction } from "../actions";
+import { loginAction} from "../actions";
 import { Form, Field, withFormik } from "formik";
 import * as Yup from "yup";
 
 import "../sass/Login.scss";
 const Login = props => {
-  const handleSubmit = e => {
-    e.preventDefault();
-    props.loginAction({ username: "admin", password: "password" });
-  };
   console.log("Formik Props: ", props);
   const { touched, errors } = props;
 
@@ -36,15 +32,15 @@ const Login = props => {
               {touched.password && errors.password && (
                 <p className="error">{errors.password}</p>
               )}
-              <a href="#" className="recover-password link">Forgot your password?</a>
+              <a href="/recoverPassword" className="recover-password link">Forgot your password?</a>
             </div>
-            <button onClick={e => handleSubmit(e)} type="submit">
+            <button type="submit">
               Sign In
             </button>
           </div>
           <div className="sign-in">
               <p>Don't have an account?</p>
-            <a href="#" className="link">Sign Up</a>
+            <a href="/signup" className="link">Sign Up</a>
           </div>
         </Form>
         <img src="images/login.png" />
@@ -63,7 +59,20 @@ const FormikLogin = withFormik({
   validationSchema: Yup.object().shape({
     username: Yup.string().required("Username is required"),
     password: Yup.string().required("Password is required")
-  })
+  }),
+  handleSubmit: (values, { resetForm, props, setErrors }) => {
+    console.log("values", props);
+    const { loginAction, history } = props;
+    const user = {
+      // phonenumber: values.phonenumber,
+      username: values.username,
+      password: values.password
+    };
+      console.log("submitHandled");
+      loginAction(user);
+      resetForm();
+      props.history.push("/plantList");
+    }
 })(Login);
 
 export default connect(
