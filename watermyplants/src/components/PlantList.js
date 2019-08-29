@@ -1,17 +1,23 @@
 //Kate
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { connect } from 'react-redux'
+import { plantsAction } from '../actions/actions'
 import PlantCard from "./PlantCard.js";
 
 // prop.array
 const PlantList = props => {
-  console.log("Props array: ", props.array);
+  const [plantList, setPlantList] = useState([...props.plants.data]);
+  console.log(plantList)
+  useEffect(() => {
+    props.plantsAction(props.user.username)
+    setPlantList([...props.plants.data])
+  }, [])
 
   return (
     <section>
       <div className="plant-summary-component">
-        {props.array.map(plants => {
-          return(
-            console.log(plants),
+        {plantList.map(plants => {
+            return(console.log(plants),
             <PlantCard
               key={plants.id}
               id={plants.id}
@@ -26,4 +32,11 @@ const PlantList = props => {
   );
 };
 
-export default PlantList;
+const mapStateToProps = state => {
+  console.log('state', state.user)
+  return {
+    user: state.user,
+    plants: state.plants,
+  }
+}
+export default connect(mapStateToProps, {plantsAction})(PlantList);

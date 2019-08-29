@@ -18,13 +18,8 @@ function App() {
     <div className="App">
       <Nav />
 
-<<<<<<< HEAD
-      <Route exact path="/signup" component={SignUp} />
-      <Route path="/login" render={props => <Login {...props} />}/>
-=======
       <PrivateRoute path="/signup" component={SignUp} />
       <Route path="/login" exact component={Login} />
->>>>>>> 750e216f88c7230165c985448125ab40dff1d5c1
 
       <PrivateRoute
         path="/plantList"
