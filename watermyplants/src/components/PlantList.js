@@ -4,7 +4,7 @@ import PlantCard from "./PlantCard.js";
 import { connect } from "react-redux";
 import Nav from "./Nav";
 import { plantsAction } from "../actions";
-import { NavLink, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const PlantList = (props) => {
   const [plantList, setPlantList] = useState([...props.plants.data]);
@@ -38,9 +38,6 @@ const PlantList = (props) => {
         </Link>
         <img src="images/smallLeaf.svg" alt="Small leaf icon from Font Awesome" />
       </section>
-      <NavLink to='/addplant'>
-      <button>Add a new plant</button>
-      </NavLink>
     </>
   );
 };

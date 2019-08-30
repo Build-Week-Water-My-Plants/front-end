@@ -175,7 +175,7 @@ export const plantsAction = username => {
   };
 };
 ///delete a plant
-export const deletePlant = id => {
+export const deletePlant = (id, history ) => {
   return dispatch => {
     dispatch({ type: DELETEPLANT_START });
     axiosWithAuth()
@@ -183,6 +183,8 @@ export const deletePlant = id => {
       .then(res => {
         console.log(res);
         dispatch({ type: DELETEPLANT_SUCCESS, payload: res.data });
+        alert('You have deleted a plant')
+        history.push('/plantList')
       })
       .catch(err => {
         console.log(err);
@@ -216,6 +218,7 @@ export const addPlant = ( plant, history )=> {
       .post(`https://doc-watermyplants.herokuapp.com/plants/plant/`, plant)
       .then(res => {
         dispatch({type: ADD_PLANT_SUCCESS, payload: res.data})
+        alert('You successfully added your plant')
         history.push('/plantList')
       })
       .catch(err => {

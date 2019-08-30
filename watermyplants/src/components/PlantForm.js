@@ -16,16 +16,19 @@ const PlantForm = props => {
     setPlant({...plant, [name]: value})
   }
 
-  const submitForm = e => {
+  const submitForm = e=> {
     e.preventDefault();
     console.log(plant);
-    props.addPlant(plant);
+    props.addPlant({species: plant.species, name: plant.name, time: plant.time, location: plant.location, user:{
+      userid:4, username: 'admin'
+    }});
     setPlant({
       species: "",
       name: "",
       time: "",
       location: "",
     });
+
   };
 
 
