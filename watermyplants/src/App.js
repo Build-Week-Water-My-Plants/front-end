@@ -16,17 +16,17 @@ import PlantList from "./components/PlantList";
 function App() {
   return (
     <div className="App">
-      <Route path="/signup" component={props => <SignUp {...props} />} />
-      <Route exact path="/" component={props => <SignUp {...props} />} />
-      <Route path="/login" component={props => <Login {...props} />} />
+      <Route path="/signup" component={SignUp} />
+      <Route exact path="/" component={SignUp} />
+      <Route path="/login" component={Login} />
 
       <PrivateRoute
         path="/plantlist"
-        component={props => <PlantList {...props} />}
+        component={PlantList}
       />
       <PrivateRoute
         path="/plantform"
-        component={props => <PlantForm {...props} />}
+        component={PlantForm}
       />
       <PrivateRoute path="/firstPlant" component={FirstPlant} />
       <PrivateRoute path="/profile" component={ProfileSettings} />
