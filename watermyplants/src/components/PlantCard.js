@@ -11,7 +11,8 @@ const PlantCard = props => {
     location: ""})
 
     const submitHandler = id => {
-        props.deletePlant(id)
+        props.delete(props.id, props.history)
+        setPlant(plant);
     }
     return(
         <div  className='plantcard'key={props.id}>
@@ -23,4 +24,4 @@ const PlantCard = props => {
     );
 }
 
-export default connect(null, {deletePlant})(PlantCard);
+export default PlantCard;

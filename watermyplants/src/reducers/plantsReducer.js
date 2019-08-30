@@ -293,8 +293,8 @@ export const plantsReducer = (state = initialState, action) => {
         plants: {
           ...state.plants,
           error: "",
-          data: [...action.payload],
-          isLoading: false
+          isLoading: false,
+          data: state.plants.data.filter(plant => plant.plantid !== action.payload)
         }
       };
 

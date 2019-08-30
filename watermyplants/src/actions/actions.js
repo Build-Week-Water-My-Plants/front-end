@@ -181,10 +181,10 @@ export const deletePlant = (id, history ) => {
     axiosWithAuth()
       .delete(`https://doc-watermyplants.herokuapp.com/plants/plant/${id}`)
       .then(res => {
-        console.log(res);
-        dispatch({ type: DELETEPLANT_SUCCESS, payload: res.data });
-        alert('You have deleted a plant')
-        history.push('/plantList')
+        console.log(res, 'delete');
+        dispatch({ type: DELETEPLANT_SUCCESS, payload: id});
+        //alert('You have deleted a plant')
+       
       })
       .catch(err => {
         console.log(err);
@@ -217,6 +217,7 @@ export const addPlant = ( plant, history )=> {
     axiosWithAuth()
       .post(`https://doc-watermyplants.herokuapp.com/plants/plant/`, plant)
       .then(res => {
+        console.log(res)
         dispatch({type: ADD_PLANT_SUCCESS, payload: res.data})
         alert('You successfully added your plant')
         history.push('/plantList')
