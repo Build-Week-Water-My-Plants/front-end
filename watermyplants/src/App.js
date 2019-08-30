@@ -22,7 +22,7 @@ function App() {
 
       <PrivateRoute
         path="/plantlist"
-        component={props => <PlantList {...props} array={PlantsDATA} />}
+        component={props => <PlantList {...props} />}
       />
       <PrivateRoute
         path="/plantform"
