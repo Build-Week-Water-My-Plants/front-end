@@ -28,21 +28,18 @@ const PlantList = props => {
               />
             );
           })}
-          <Link to="/addplant">
-            {" "}
-            <button>Add Plant</button>
-          </Link>
         </div>
         <Link to="/addPlant">
           <img
             src="images/smallAdd.svg"
             alt="Add more plants, small add icon from Font Awesome"
           />
-        </Link>
-        <img
+          <img
           src="images/smallLeaf.svg"
           alt="Small leaf icon from Font Awesome"
         />
+        </Link>
+
       </section>
     </>
   );

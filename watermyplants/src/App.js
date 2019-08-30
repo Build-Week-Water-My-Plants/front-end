@@ -9,7 +9,7 @@ import SignUp from "./components/SignUp.js";
 import ProfileSettings from "./components/ProfileSettings.js";
 import FirstPlant from "./components/FirstPlant.js";
 import RecoverPassword from "./components/RecoverPassword.js";
-// import PlantsDATA from "./components/PlantsDATA";
+import PlantsDATA from "./components/PlantsDATA";
 import PlantList from "./components/PlantList";
 // import UpdatePlant from "./components/UpdatePlant";
 
