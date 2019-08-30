@@ -13,6 +13,25 @@
     -Delete Schedule page
     -Edit profile page
 
+## Frameworks or Libraries 
+>
+	-React
+	-Axios
+	-React Router
+	-Sass
+	-Maven
+	-Spring Mvc and Spring Boot and Spring Security
+	-Jackson
+	-H2
+	-Twilio
+	-JUnit
+    -Mockito
+	-Slf4j
+	-Swagger2
+    -Cloudinary
+    -Formik
+    -Yup
+
 
 ## Junior FE
 
