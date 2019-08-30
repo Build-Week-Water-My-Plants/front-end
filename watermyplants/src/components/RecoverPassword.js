@@ -1,7 +1,11 @@
 import React from "react";
+<<<<<<< HEAD
+import {  Link } from "react-router-dom";
+=======
 import "../sass/recover.scss";
 import NavLogin from "./NavLogin";
 import { Link } from "react-router-dom";
+>>>>>>> 2e255ceb8fad8a1a9b354810899e40dcf837c3d9
 
 //This page does not need to be functional for MVP.
 const RecoverPassword = props => {

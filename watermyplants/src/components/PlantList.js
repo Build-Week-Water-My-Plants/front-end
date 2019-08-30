@@ -1,6 +1,5 @@
 //Kate
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import PlantCard from "./PlantCard.js";
 import { connect } from "react-redux";
 import Nav from "./Nav";

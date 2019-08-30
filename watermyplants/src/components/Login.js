@@ -1,7 +1,7 @@
 import React from "react";
 // import { Route, Link } f rom "react-router-dom";
 import { connect } from "react-redux";
-import { loginAction } from "../actions";
+import { loginAction, deletePlant } from "../actions";
 import { Form, Field, withFormik } from "formik";
 import * as Yup from "yup";
 import NavLogin from "./NavLogin";
@@ -73,7 +73,6 @@ const FormikLogin = withFormik({
   handleSubmit: (values, { resetForm, props, setErrors }) => {
     const { loginAction, history } = props;
     const user = {
-      // phonenumber: values.phonenumber,
       username: values.username,
       password: values.password
     };
@@ -85,7 +84,7 @@ const FormikLogin = withFormik({
 
 export default connect(
   null,
-  { loginAction }
+  { loginAction, deletePlant}
 )(FormikLogin);
 
 // //Bri
