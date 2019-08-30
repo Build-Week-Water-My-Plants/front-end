@@ -1,0 +1,46 @@
+@import "variables.scss";
+
+.form-section {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    height: 24em;
+    width: auto;
+  }
+}
+
+.form-outer {
+  width: 20em;
+  height: 25em;
+  background: $dark-blue;
+  color: white;
+  margin-right: 4em;
+  padding: 1em;
+  display: flex;
+  border-radius: 1em;
+  flex-direction: column;
+  text-align: center;
+}
+
+.go-back-addplant {
+  display: flex;
+  margin: 0;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+
+  img {
+    margin-right: 1em;
+    height: 1.5em;
+    width: 1.5em;
+  }
+}
+
+.plant-form input {
+  padding: 0.5em;
+  margin: 0.5em;
+}

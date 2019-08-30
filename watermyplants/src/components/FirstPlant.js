@@ -17,11 +17,13 @@ const FirstPlant = props => {
               className="bigAdd"
             />
           </Link>
-          <img
-            src="images/bigLeaf.svg"
-            alt="Large Leaf icon from Font Awesome."
-            className="bigLeaf"
-          />
+          <Link to="/addplant">
+            <img
+              src="images/bigLeaf.svg"
+              alt="Large Leaf icon from Font Awesome."
+              className="bigLeaf"
+            />
+          </Link>
         </div>
       </div>
     </>
