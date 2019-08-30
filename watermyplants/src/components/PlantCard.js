@@ -1,8 +1,7 @@
 //create card of plant inside plant list of the design file
 //will map over array in plant list and push to card.
 import React, { useState} from "react";
-import { deletePlant } from '../actions/actions'
-import { connect } from 'react-redux'
+
 
 const PlantCard = props => {
     const [plant, setPlant] = useState({species: "",
@@ -12,7 +11,7 @@ const PlantCard = props => {
 
     const submitHandler = id => {
         props.delete(props.id, props.history)
-        setPlant(plant);
+        //setPlant(plant);
     }
     return(
         <div  className='plantcard'key={props.id}>

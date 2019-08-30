@@ -25,7 +25,7 @@ const PlantForm = props => {
     e.preventDefault();
     console.log(plant);
     props.addPlant({species: plant.species, name: plant.name, time: plant.time, location: plant.location, user:{
-      userid:4, username: 'admin'
+      userid: props.user.userid, username: props.user.username
     }});
     setPlant({
       species: "",
@@ -87,7 +87,14 @@ const PlantForm = props => {
   );
 };
 
+const mapStateToProps = state => {
+  console.log('state form', state)
+  return {
+    ...state,
+    user: state.user
+  }
+}
 export default connect(
-  null,
+  mapStateToProps,
   { addPlant }
 )(PlantForm);

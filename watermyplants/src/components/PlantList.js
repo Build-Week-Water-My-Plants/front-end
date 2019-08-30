@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 
 const PlantList = props => {
   const [plantList, setPlantList] = useState([]);
-  console.log(props.user.plants, "plantlist", "1");
   useEffect(() => {
     setPlantList([...props.plants.data])
   }, [props]);
