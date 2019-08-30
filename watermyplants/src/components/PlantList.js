@@ -3,15 +3,15 @@ import React, { useState, useEffect } from "react";
 import PlantCard from "./PlantCard.js";
 import { connect } from "react-redux";
 import Nav from "./Nav";
-import { plantsAction } from "../actions";
-import { Link } from "react-router-dom";
+import { plantsAction, deletePlant } from "../actions";
+import { Link } from 'react-router-dom';
 
 const PlantList = props => {
-  const [plantList, setPlantList] = useState([...props.plants.data]);
+  const [plantList, setPlantList] = useState([]);
   console.log(props.user.plants, "plantlist", "1");
   useEffect(() => {
-    // setPlantList(props.user.plants)
-  }, []);
+    setPlantList([...props.plants.data])
+  }, [props]);
   return (
     <>
       <Nav />
@@ -24,6 +24,7 @@ const PlantList = props => {
                 id={plants.plantid}
                 name={plants.name}
                 species={plants.species}
+                delete={props.deletePlant}
               />
             );
           })}
@@ -47,11 +48,12 @@ const PlantList = props => {
 const mapStateToProps = state => {
   console.log("state", state, "2");
   return {
+    ...state,
     user: state.user,
     plants: state.plants
   };
 };
 export default connect(
   mapStateToProps,
-  { plantsAction }
+  { plantsAction ,deletePlant }
 )(PlantList);
