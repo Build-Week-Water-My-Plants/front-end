@@ -9,40 +9,31 @@ import SignUp from "./components/SignUp.js";
 import ProfileSettings from "./components/ProfileSettings.js";
 import FirstPlant from "./components/FirstPlant.js";
 import RecoverPassword from "./components/RecoverPassword.js";
-import PlantsDATA from "./components/PlantsDATA";
+// import PlantsDATA from "./components/PlantsDATA";
 import PlantList from "./components/PlantList";
-import UpdatePlant from "./components/UpdatePlant";
+// import UpdatePlant from "./components/UpdatePlant";
 
 function App() {
   return (
     <div className="App">
-      <Nav />
+      <Route path="/signup" component={props => <SignUp {...props} />} />
+      <Route exact path="/" component={props => <SignUp {...props} />} />
+      <Route path="/login" component={props => <Login {...props} />} />
 
-      <Route path="/signup" component={SignUp} />
-      <Route path="/login" exact component={Login} />
-
       <PrivateRoute
-        path="/plantList"
-        component={PlantList}
+        path="/plantlist"
+        component={props => <PlantList {...props} array={PlantsDATA} />}
       />
       <PrivateRoute
-        path="/firstPlant"
-        component={FirstPlant}
+        path="/plantform"
+        component={props => <PlantForm {...props} />}
       />
-      <PrivateRoute
-        path="/profile"
-        component={ProfileSettings}
-      />
-      <PrivateRoute
-        path="/addplant"
-        component={PlantForm}
-      />
+      <PrivateRoute path="/firstPlant" component={FirstPlant} />
+      <PrivateRoute path="/profile" component={ProfileSettings} />
+      <PrivateRoute path="/addplant" component={PlantForm} />
 
       {/* this page shouldn't be functional */}
-      <Route
-        path="/recoverPassword"
-        component={RecoverPassword}
-      />
+      <Route path="/recoverPassword" component={RecoverPassword} />
 
       {/* Sends an array of objects as dunny data */}
       <PrivateRoute path="/plant" component={PlantList} />
