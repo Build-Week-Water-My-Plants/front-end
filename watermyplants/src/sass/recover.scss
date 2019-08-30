@@ -1,0 +1,71 @@
+@import "variables.scss";
+
+.recover-container {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+
+  h2 {
+    color: $dark-pink;
+    font-size: 3em;
+  }
+}
+.recover-inner {
+  display: flex;
+  color: white;
+  height: auto;
+  width: 75%;
+  justify-content: space-around;
+}
+
+.recover-form {
+  padding: 2em;
+  background: $dark-blue;
+  border-radius: 1em;
+  width: 20em;
+  padding-top: 0.5em;
+
+  h3 {
+    font-size: 1.8em;
+    margin-top: 0;
+  }
+
+  p {
+    color: $light-blue;
+  }
+}
+
+button {
+  border: none;
+  font-size: 1em;
+  color: white;
+  text-align: center;
+  background: $med-blue;
+  margin-top: 1em;
+  height: 3em;
+}
+
+.recover-input {
+  padding: 0.5em;
+  border-radius: 0.5em;
+}
+
+.go-back-recover {
+  display: flex;
+  margin: 0;
+  color: white;
+  height: 2em;
+  width: 5em;
+  text-decoration: none;
+
+  img {
+    margin-right: 1em;
+    height: 1em;
+    width: auto;
+  }
+}

@@ -23,9 +23,9 @@ import {
   ADD_PLANT_FAILED,
   ADD_PLANT_START,
   ADD_PLANT_SUCCESS,
-  DELETEUSER_FAIL,
-  DELETEUSER_START,
-  DELETEUSER_SUCCESS,
+  // DELETEUSER_FAIL,
+  // DELETEUSER_START,
+  // DELETEUSER_SUCCESS,
   UPDATE_USER_FAIL,
   UPDATE_USER_START,
   UPDATE_USER_SUCCESS
@@ -293,8 +293,8 @@ export const plantsReducer = (state = initialState, action) => {
         plants: {
           ...state.plants,
           error: "",
-          data: [...action.payload],
-          isLoading: false
+          isLoading: false,
+          data: state.plants.data.filter(plant => plant.plantid !== action.payload)
         }
       };
 
