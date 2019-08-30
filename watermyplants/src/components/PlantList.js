@@ -3,13 +3,13 @@ import React, { useState, useEffect } from "react";
 import PlantCard from "./PlantCard.js";
 import { connect } from "react-redux";
 import Nav from "./Nav";
-import { plantsAction, deletePlant } from "../actions";
-import { Link } from 'react-router-dom';
+import { plantsAction } from "../actions";
+import { Link } from "react-router-dom";
 
 const PlantList = props => {
   const [plantList, setPlantList] = useState([]);
   useEffect(() => {
-    setPlantList([...props.plants.data])
+    setPlantList([...props.plants.data]);
   }, [props]);
   return (
     <>
@@ -28,19 +28,23 @@ const PlantList = props => {
             );
           })}
         </div>
+        <Link to="/addplant">
+          {" "}
+          <button>Add Plant</button>
+        </Link>
+
         <Link to="/addPlant">
           <img
-            style={{marginTop: '100px', marginLeft: '25px'}}
+            style={{ marginTop: "100px", marginLeft: "25px" }}
             src="images/smallAdd.svg"
             alt="Add more plants, small add icon from Font Awesome"
           />
           <img
-          style={{marginTop: '100px', marginLeft: '25px'}}
-          src="images/smallLeaf.svg"
-          alt="Small leaf icon from Font Awesome"
-        />
+            style={{ marginTop: "100px", marginLeft: "25px" }}
+            src="images/smallLeaf.svg"
+            alt="Small leaf icon from Font Awesome"
+          />
         </Link>
-
       </section>
     </>
   );
@@ -56,5 +60,5 @@ const mapStateToProps = state => {
 };
 export default connect(
   mapStateToProps,
-  { plantsAction ,deletePlant }
+  { plantsAction, deletePlant }
 )(PlantList);
