@@ -35,10 +35,12 @@ const PlantList = props => {
 
         <Link to="/addPlant">
           <img
+            style={{ marginTop: "100px", marginLeft: "25px" }}
             src="images/smallAdd.svg"
             alt="Add more plants, small add icon from Font Awesome"
           />
           <img
+            style={{ marginTop: "100px", marginLeft: "25px" }}
             src="images/smallLeaf.svg"
             alt="Small leaf icon from Font Awesome"
           />
