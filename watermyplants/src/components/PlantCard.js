@@ -10,8 +10,7 @@ const PlantCard = props => {
     time: "",
     location: ""})
 
-    const submitHandler = (e, id) => {
-        e.preventDefault()
+    const submitHandler = id => {
         props.deletePlant(id)
     }
     return(
@@ -19,7 +18,7 @@ const PlantCard = props => {
             <h3>{props.name}</h3>
             <h5>{props.species}</h5>
             <img src="images/calander.svg" alt="Calendar icon" />
-            <button onClick={(e) => submitHandler(e)}>Delete Plant</button>
+            <button onClick={() => submitHandler()}>Delete Plant</button>
         </div>
     );
 }
