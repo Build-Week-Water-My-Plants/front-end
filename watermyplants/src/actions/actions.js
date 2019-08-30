@@ -216,6 +216,7 @@ export const addPlant = plant => {
     axiosWithAuth()
       .post(`https://doc-watermyplants.herokuapp.com/plants/plant/`, plant)
       .then(res => {
+        console.log(res)
         dispatch({type: ADD_PLANT_SUCCESS, payload: res.data})
       })
       .catch(err => {
