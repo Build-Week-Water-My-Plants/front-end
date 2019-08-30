@@ -35,8 +35,8 @@ const PlantList = (props) => {
         </div>
         <Link to="/addPlant" >
           <img src="images/smallAdd.svg" alt="Add more plants, small add icon from Font Awesome" />
+          <img src="images/smallLeaf.svg" alt="Small leaf icon from Font Awesome" />
         </Link>
-        <img src="images/smallLeaf.svg" alt="Small leaf icon from Font Awesome" />
       </section>
     </>
   );
